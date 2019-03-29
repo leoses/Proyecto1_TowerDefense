@@ -45,6 +45,10 @@ public class UIManager : MonoBehaviour {
         OleadaText.text = "Oleada:" + oleada + "/" + totaloleada;
     }
 
+    public void UpdateScene(string scene)
+    {
+        GameManager.instance.ChangeScene(scene);
+    }
 
     //public void ColorPenalization( ref int t)
     //{
