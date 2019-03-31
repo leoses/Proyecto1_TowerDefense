@@ -9,11 +9,13 @@ public class Shoot : MonoBehaviour {
     public float cadencia;
     public Bala bala;
     private GameObject pool;
+    private Animator animator;
 
     private void Start()
     {
         pool = GameObject.FindGameObjectWithTag("bulletpool");
         tiempo = cadencia;
+        animator = this.transform.parent.GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,7 @@ public class Shoot : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0) && tiempo >= cadencia)
         {
+            animator.SetTrigger("Shoot");
             Bala balaNueva = Instantiate<Bala>(bala, transform.position, transform.rotation, pool.transform);
             //Debug.Log(transform.position + " *");
             tiempo = 0;

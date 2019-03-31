@@ -8,12 +8,14 @@ public class MeleeAttack : MonoBehaviour {
     public float attackRate = 1f;
     float time;
     bool active;
+    private Animator animator;
 
     private void Start()
     {
         //El área del ataque es el primer hijo del objeto
         meleeArea = gameObject.transform.GetChild(0).gameObject;
         time = attackRate;
+        animator = this.GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -24,6 +26,7 @@ public class MeleeAttack : MonoBehaviour {
         if (!active && Input.GetKeyDown("mouse 1") && time >= attackRate)
         {
             meleeArea.SetActive(true);
+            animator.SetTrigger("MeleeAtack");
             time = 0;
             active = true;
         }

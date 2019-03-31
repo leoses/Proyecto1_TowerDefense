@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector2 move;
+    private Animator animator;
     public float speed;
     bool W;
     bool A;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = this.GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -37,6 +39,11 @@ public class PlayerMovement : MonoBehaviour
             move = new Vector2(move.x, move.y - speed);
         if (D)
             move = new Vector2(move.x + speed, move.y);
+
+        if (move == Vector2.zero)
+            animator.SetFloat("Speed", 0);
+        else
+            animator.SetFloat("Speed", 1);
     }
 
     void FixedUpdate()
