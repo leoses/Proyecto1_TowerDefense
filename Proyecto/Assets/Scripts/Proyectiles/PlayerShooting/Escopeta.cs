@@ -25,30 +25,33 @@ public class Escopeta : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        tiempo += Time.deltaTime;
-
-        if (Input.GetMouseButtonDown(0) && GameManager.instance.ammo > 0 && tiempo >= cadencia)
+        if (Time.timeScale > 0)
         {
-            for (int i = 0; i < n; i++)
+            tiempo += Time.deltaTime;
+
+            if (Input.GetMouseButtonDown(0) && GameManager.instance.ammo > 0 && tiempo >= cadencia)
             {
-                float angle = 0.0f;
-                Vector3 axis = Vector3.forward;
-                transform.rotation.ToAngleAxis(out angle, out axis);
-                anguloN = (2 * angg) / (n - 1);   //Dividimos el ángulo total entre las balas de la escopeta                
-                v = ((angle - angg) + (anguloN * i)) * axis;
-                //Vector3 v = (angle + Random.Range(-angg, angg)) * axis;
-                //Quaternion rotation = Quaternion.Euler(0, 0, angle + Random.Range(-angg,angg));
-                Quaternion rotation = Quaternion.Euler(v);  //Es igual que antes, solo que ahora valora tb los ejes sacados del ToAngleAxis y va mejor
-                Debug.Log(angle);
-                Debug.Log(transform.position + " *");
-                // Bala balaNueva = Instantiate<Bala>(bala, transform.position, rotation);
-                BalaEscopeta balaNueva = Instantiate<BalaEscopeta>(bala, transform.position, rotation, pool.transform);
-                GameObject.Destroy(balaNueva.gameObject, vida);
-                Debug.Log(balaNueva.transform.rotation);
-                //StartCoroutine(Ej());
+                for (int i = 0; i < n; i++)
+                {
+                    float angle = 0.0f;
+                    Vector3 axis = Vector3.forward;
+                    transform.rotation.ToAngleAxis(out angle, out axis);
+                    anguloN = (2 * angg) / (n - 1);   //Dividimos el ángulo total entre las balas de la escopeta                
+                    v = ((angle - angg) + (anguloN * i)) * axis;
+                    //Vector3 v = (angle + Random.Range(-angg, angg)) * axis;
+                    //Quaternion rotation = Quaternion.Euler(0, 0, angle + Random.Range(-angg,angg));
+                    Quaternion rotation = Quaternion.Euler(v);  //Es igual que antes, solo que ahora valora tb los ejes sacados del ToAngleAxis y va mejor
+                    Debug.Log(angle);
+                    Debug.Log(transform.position + " *");
+                    // Bala balaNueva = Instantiate<Bala>(bala, transform.position, rotation);
+                    BalaEscopeta balaNueva = Instantiate<BalaEscopeta>(bala, transform.position, rotation, pool.transform);
+                    GameObject.Destroy(balaNueva.gameObject, vida);
+                    Debug.Log(balaNueva.transform.rotation);
+                    //StartCoroutine(Ej());
+                }
+                tiempo = 0;
+                GameManager.instance.CambiaMunicion(-1);
             }
-            tiempo = 0;
-            GameManager.instance.CambiaMunicion(-1);
         }
     }
 //    IEnumerator Ej()

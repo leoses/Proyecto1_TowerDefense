@@ -10,14 +10,14 @@ public class WaveManager : MonoBehaviour
     [System.Serializable]
     class Wave
     {
-        public int melee;
-        public int distancia;
-        public int teletransportador;
-        public int invocador;
-        public int inhibidor;
-        public int escudo;
-        public float tiempo;
-        public int municion;
+        public int melee = 0;
+        public int distancia = 0;
+        public int teletransportador = 0;
+        public int invocador = 0;
+        public int inhibidor = 0;
+        public int escudo = 0;
+        public float tiempo = 0;
+        public int municion = 0;
     }
 
 
@@ -74,7 +74,7 @@ public class WaveManager : MonoBehaviour
 
             if (t > 1)
             {
-                int r = rnd.Next(0, 4);
+                int r = rnd.Next(0, 5);
 
                 if (cont[0] < oleada[i].melee && r == 0)
                 {

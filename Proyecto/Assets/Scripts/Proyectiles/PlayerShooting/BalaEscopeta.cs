@@ -25,10 +25,9 @@ public class BalaEscopeta : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         Health enemigo = collision.gameObject.GetComponent<Health>();
-        Shield shield = collision.gameObject.GetComponent<Shield>();
 
-        //Si el gameObject con el que colisionan tiene salud, le causa daño a no ser que sea o el Escudo o el nexo
-        if (enemigo != null && shield == null && collision.gameObject.tag != "Nexus") enemigo.RecieveDamage(damage);
+        //Si el gameObject con el que colisionan tiene salud, le causa daño a no ser que sea el nexo 
+        if (enemigo != null && collision.gameObject.tag != "Nexus") enemigo.RecieveDamage(damage);
 
         ////Al colisionar con cualquiero objeto, las balas se destruyen
         //Destroy(this.gameObject);

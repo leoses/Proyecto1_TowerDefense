@@ -27,10 +27,6 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //No colisiona con torretas (se destruiría inmediatamente)
-        if (collision.gameObject.GetComponent<TurretShooting>() == null)
-            Destroy(gameObject);
-
         //Comprobamos si el objeto con el que ha colisionado la bala tiene algún script de salud
         //Si es así, causamos daño a dicho objeto
         Health damagedObject = collision.gameObject.GetComponent<Health>();
@@ -38,5 +34,6 @@ public class Bullet : MonoBehaviour {
 
         if (collision.gameObject.CompareTag("Nexus")) GameManager.instance.PierdeVidaNucleo(damage);
 
+        Destroy(gameObject);
     }
 }

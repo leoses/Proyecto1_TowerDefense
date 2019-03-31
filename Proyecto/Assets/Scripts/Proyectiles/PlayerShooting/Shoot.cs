@@ -5,9 +5,10 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
     //Disparo de la pistola
+    public int damage;
     float tiempo;
     public float cadencia;
-    public Bala bala;
+    public Bullet bala;
     private GameObject pool;
 
     private void Start()
@@ -19,13 +20,16 @@ public class Shoot : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        tiempo += Time.deltaTime;
-
-        if (Input.GetMouseButtonDown(0) && tiempo >= cadencia)
+        if (Time.timeScale > 0)
         {
-            Bala balaNueva = Instantiate<Bala>(bala, transform.position, transform.rotation, pool.transform);
-            //Debug.Log(transform.position + " *");
-            tiempo = 0;
+            tiempo += Time.deltaTime;
+
+            if (Input.GetMouseButtonDown(0) && tiempo >= cadencia)
+            {
+                Bullet balaNueva = Instantiate<Bullet>(bala, transform.position, transform.rotation, pool.transform);
+                balaNueva.newValues(-transform.up, damage);
+                tiempo = 0;
+            }
         }
     }
 }

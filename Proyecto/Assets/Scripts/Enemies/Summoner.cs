@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class Summoner : MonoBehaviour {
+public class Summoner : MonoBehaviour
+{
 
     public Enemy summoningEnemy;
     public int averageWalk = 6;
@@ -39,4 +40,10 @@ public class Summoner : MonoBehaviour {
         Enemy newEnemy = Instantiate(summoningEnemy, transform.position, transform.rotation);
         newEnemy.NewDir(dir);
     }
+
+    public void Stop()
+    {
+        time = 100;
+    }
 }
+

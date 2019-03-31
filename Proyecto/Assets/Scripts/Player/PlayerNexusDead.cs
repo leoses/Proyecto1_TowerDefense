@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class PlayerNexusDead : MonoBehaviour {
 
-    public GameObject respawn;
+    Transform respawn;
     PlayerMovement player;
+
+    private void Awake()
+    {
+        respawn = GameObject.FindWithTag("Spawn").transform;
+    }
 
     void Start()
     {

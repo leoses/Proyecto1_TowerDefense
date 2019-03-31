@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4722959460935642}
   - component: {fileID: 212535231423701716}
   - component: {fileID: 50297439829786524}
-  - component: {fileID: 61076175295171818}
+  - component: {fileID: 58875809496006722}
   - component: {fileID: 114151939106899568}
   - component: {fileID: 114567136783703452}
   - component: {fileID: 114539400456856130}
@@ -111,8 +111,8 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 50
---- !u!61 &61076175295171818
-BoxCollider2D:
+--- !u!58 &58875809496006722
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -124,18 +124,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.45, y: 14.45}
-    newSize: {x: 14.45, y: 14.45}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.45, y: 14.45}
-  m_EdgeRadius: 0
+  m_Radius: 7.225
 --- !u!114 &114151939106899568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  dir: {x: 0, y: 0}
 --- !u!114 &114539400456856130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,8 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f02d7c43a8c0f4a8f37e33333710c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heal: {fileID: 114605909859513322, guid: af333faf0cc5c7f45ba7b7001bf8a7c9, type: 2}
   health: 30
   money: 50
+  dropProb: 0
 --- !u!114 &114567136783703452
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -8,12 +8,15 @@ public class Enemy : MonoBehaviour {
 
     public float speed;
     public Vector2 dir;
-    PlayerNexusDetection DetectionArea;
+    Vector2 prevDir;
+    PlayerNexusDetection detectionArea;
+    Summoner sum;
 
     //Por defecto, los enemigos comenzarán a moverse hacia la derecha del eje x
     private void Start()
     {
-        DetectionArea = gameObject.GetComponentInChildren<PlayerNexusDetection>();
+        sum = gameObject.GetComponent<Summoner>();
+        detectionArea = gameObject.GetComponentInChildren<PlayerNexusDetection>();
         Rotation(dir);
     }
     void Update ()
@@ -23,17 +26,23 @@ public class Enemy : MonoBehaviour {
 
     //Método para parar al enemigo cuando detecta que el jugador o el núcleo están dentro de su área de ataque 
     //y guardar la dirección que llevaba
-    public Vector2 StopEnemy()
+    public void StopEnemy()
     {
-        Vector2 mov = dir;
-        dir = new Vector2(0, 0);
-        return mov;
+        prevDir = dir;
+        dir = Vector2.zero;
+
+        if (sum != null)
+            sum.Stop();
     }
 
     //Método para devolverle al enemigo la velocidad que llevaba antes de detenerse por detectar al jugador
-    public void NewDir(Vector2 nuevo)
+    public void NewDir(Vector2 direc)
     {
-        dir = nuevo;
+        if (direc == Vector2.zero)
+            dir = prevDir;
+
+        else
+            dir = direc;
     }
     //Método para cambiar la rotación del area de ataque fisico
     //En el distancia no es necesario puesto que su area es un circulo con centro en el pivote
@@ -42,25 +51,29 @@ public class Enemy : MonoBehaviour {
     {
         //Mismo eje, sentido contrario
 
-        if (dir == -1 * newdir) DetectionArea.ChangeRotation(180);
+        if (dir == -1 * newdir) detectionArea.ChangeRotation(180);
         //Mismo eje misma direccion
-        else if (dir == newdir) DetectionArea.ChangeRotation(0);
+        else if (dir == newdir) detectionArea.ChangeRotation(0);
         //Cambio de eje, pasamos de movernos en y a movernos en x
         else if (dir.x == 0)
         {
-            if (newdir.x == dir.y) DetectionArea.ChangeRotation(-90);
-            else DetectionArea.ChangeRotation(90);
+            if (newdir.x == dir.y) detectionArea.ChangeRotation(-90);
+            else detectionArea.ChangeRotation(90);
         }
         //Cambio de eje, pasamos de movernos en x a movernos en y
         else
         {
-            if (newdir.y == dir.x) DetectionArea.ChangeRotation(90);
-            else DetectionArea.ChangeRotation(-90);
+            if (newdir.y == dir.x) detectionArea.ChangeRotation(90);
+            else detectionArea.ChangeRotation(-90);
         }
     }
 
     public Vector2 PassDir()
     {
-        return (dir);
+        if (dir == Vector2.zero)
+            return (prevDir);
+
+        else
+            return (dir);
     }
 }
