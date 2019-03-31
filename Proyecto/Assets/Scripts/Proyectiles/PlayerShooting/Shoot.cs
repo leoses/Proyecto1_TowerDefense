@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0) && tiempo >= cadencia)
         {
-            animator.SetTrigger("Shoot");
+            if (animator != null) animator.SetTrigger("Shoot");
             Bala balaNueva = Instantiate<Bala>(bala, transform.position, transform.rotation, pool.transform);
             //Debug.Log(transform.position + " *");
             tiempo = 0;
