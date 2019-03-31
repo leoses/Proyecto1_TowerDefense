@@ -896,7 +896,7 @@ MonoBehaviour:
     type: 2}
   Invocador: {fileID: 1789632211956472, guid: fce9ee0853285f846aef776686142dd3, type: 2}
   Inhibidor: {fileID: 0}
-  Escudo: {fileID: 0}
+  Escudo: {fileID: 1762836818851396, guid: b918afb80b0a9f142becd61882a018fe, type: 2}
   oleada:
   - melee: 2
     distancia: 2
