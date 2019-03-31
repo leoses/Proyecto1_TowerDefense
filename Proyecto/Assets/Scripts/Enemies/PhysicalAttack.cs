@@ -25,7 +25,9 @@ public class PhysicalAttack : MonoBehaviour {
     //saber a que tiene que causar daño
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         planux = collision.gameObject.GetComponent<PlayerNexusDead>();
+
         //Debug.Log(collision.gameObject.name);
         if (planux != null)
         {
@@ -53,6 +55,7 @@ public class PhysicalAttack : MonoBehaviour {
     private void OnTriggerStay2D(Collider2D collision)
     {
         time += Time.fixedDeltaTime;
+        
         if (time >= seconds)
         {
             if (planux != null)
