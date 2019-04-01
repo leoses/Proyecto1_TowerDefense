@@ -54,9 +54,11 @@ public class GameManager : MonoBehaviour {
     }
 
     //Metodo que termina el juego
-    public void EndGame()
-    {         
-       ChangeScene("FinPartida");        
+    public void EndGame( bool win)
+    {
+        
+        uiManager.End(win); 
+        
     }
 
     // metodo que cambia de escena en el juego
@@ -94,7 +96,7 @@ public class GameManager : MonoBehaviour {
         uiManager.Damage(vidaNucleo, uiManager.Nexusbar, vidaNucleoMax);
         //si la vida del núcleo es menor o igual a 0 entonces termina el juego.
         if (vidaNucleo <= 0)
-            EndGame();
+            EndGame(false);
     }
 
     public void CambiaMunicion(int cant)

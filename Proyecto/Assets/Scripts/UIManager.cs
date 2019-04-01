@@ -12,12 +12,19 @@ public class UIManager : MonoBehaviour {
     public Image Nexusbar;
     public Text TiempoText;
     public Text OleadaText;
+    public GameObject EndGame;
+    public Text EndGameText;
+    public Button ReplayButton, NextLevelButton;
+    
 
     //En el start hacemos saber al GameManager que este componente es el encargado de
     //actualizar la interfaz
     void Start()
     {
         GameManager.instance.SetUIManager(this);
+        EndGame.SetActive(false);
+        ReplayButton.gameObject.SetActive(false);
+        NextLevelButton.gameObject.SetActive(false);
     }
 
     //Muestra el dinero
@@ -48,6 +55,23 @@ public class UIManager : MonoBehaviour {
     public void UpdateScene(string scene)
     {
         GameManager.instance.ChangeScene(scene);
+    }
+
+    // Metodo que abre las opciones al terminar el juego
+    public void End (bool win)
+    {
+        EndGame.SetActive(true);
+        if(win)
+        {
+            EndGameText.text = "you win";
+            NextLevelButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            EndGameText.text = "Game over";
+            ReplayButton.gameObject.SetActive(true);
+
+        }
     }
 
     //public void ColorPenalization( ref int t)
