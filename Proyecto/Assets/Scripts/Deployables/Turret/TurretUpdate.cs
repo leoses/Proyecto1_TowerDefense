@@ -8,10 +8,12 @@ struct Update
     public int cost;
     public int damage;
     public float fireRate;
-    //public int range ???
 }
 
 public class TurretUpdate : MonoBehaviour {
+
+    public AudioClip sound;
+    public AudioSource source;
 
     [SerializeField]
     Update first;
@@ -56,5 +58,7 @@ public class TurretUpdate : MonoBehaviour {
                 }
                     break;
         }
+        source.clip = sound;
+        source.Play();
     }
 }

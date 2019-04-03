@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour {
 
+    public AudioClip sound;
+    public AudioSource source;
+
     //Disparo de la pistola
     float tiempo;
     public float cadencia;
@@ -25,6 +28,8 @@ public class Shoot : MonoBehaviour {
         {
             Bala balaNueva = Instantiate<Bala>(bala, transform.position, transform.rotation, pool.transform);
             tiempo = 0;
+            source.clip = sound;
+            source.Play();
         }
     }
 }

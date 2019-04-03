@@ -4,6 +4,9 @@ using UnityEngine.Tilemaps;
 
 public class TurretArea : MonoBehaviour
 {
+    public AudioClip sound;
+    public AudioSource source;
+
     public Tilemap tilemap;
     public int cost = 150;
     public GameObject turretPref;
@@ -21,6 +24,7 @@ public class TurretArea : MonoBehaviour
 
     void Start()
     {
+        source.clip = sound;
         line = gameObject.GetComponent<LineRenderer>(); //Se coge el componente line renderer que es la representación visual del área de construcción
         line.useWorldSpace = false; //No se usan coordenadas del mundo
 
@@ -31,14 +35,13 @@ public class TurretArea : MonoBehaviour
     private void Update()
     {
         t += Time.deltaTime;
+
         //El booleano done aumenta la eficiencia del script (muy a menudo no se ejecutará ningún if debido a él)
         if (!done && Input.GetKey(GameManager.areaKey)) //Si no está representada el área y se pulsa el espacio se crea el círculo
         {
             line.positionCount = segments + 1;
             CreatePoints();
             done = true;
-
-            
         }
 
         if (Input.GetKey(KeyCode.Mouse1))
@@ -69,7 +72,8 @@ public class TurretArea : MonoBehaviour
 
                         //Se sustituye la pared sin torreta por una pared con torreta
                         Instantiate(turretPref, poshit, Quaternion.identity);
-                        //GameManager.GanaDinero(-cost);
+                        source.Play();
+                        GameManager.instance.GanaDinero(-cost);
                     }
                 }
             }

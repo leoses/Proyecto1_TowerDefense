@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TurretShooting : MonoBehaviour {
 
+    public AudioClip sound;
+    public AudioSource source;
+
     public Bullet bulletPref;
     Collider2D[] contacts;
     Transform target = null;
@@ -29,6 +32,8 @@ public class TurretShooting : MonoBehaviour {
                 Bullet newBullet = Instantiate(bulletPref, transform.position, Quaternion.identity, transform);
                 time = 0;
                 newBullet.newValues(dir, damage); //Se manda a la bala instanciada la diracción en la que debe moverse
+                source.clip = sound;
+                source.Play();
             }
         }
 
