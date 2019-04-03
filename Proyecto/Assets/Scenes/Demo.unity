@@ -898,21 +898,21 @@ MonoBehaviour:
   Inhibidor: {fileID: 0}
   Escudo: {fileID: 1762836818851396, guid: b918afb80b0a9f142becd61882a018fe, type: 2}
   oleada:
-  - melee: 2
-    distancia: 2
-    teletransportador: 2
-    invocador: 2
-    inhibidor: 2
-    escudo: 2
-    tiempo: 40
-    municion: 0
-  - melee: 20
-    distancia: 10
+  - melee: 1
+    distancia: 0
     teletransportador: 0
     invocador: 0
     inhibidor: 0
     escudo: 0
-    tiempo: 60
+    tiempo: 3
+    municion: 0
+  - melee: 0
+    distancia: 0
+    teletransportador: 0
+    invocador: 0
+    inhibidor: 0
+    escudo: 0
+    tiempo: 5
     municion: 0
   - melee: 2
     distancia: 1
@@ -20655,8 +20655,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 45}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 45}
+  m_SizeDelta: {x: 135.1, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305677287
 MonoBehaviour:

@@ -63,14 +63,13 @@ public class UIManager : MonoBehaviour {
         EndGame.SetActive(true);
         if(win)
         {
-            EndGameText.text = "you win";
+            EndGameText.text = "You Win";
             NextLevelButton.gameObject.SetActive(true);
         }
         else
         {
-            EndGameText.text = "Game over";
+            EndGameText.text = "Game Over";
             ReplayButton.gameObject.SetActive(true);
-
         }
     }
 
