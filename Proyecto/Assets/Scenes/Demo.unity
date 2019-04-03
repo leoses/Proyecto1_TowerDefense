@@ -24213,6 +24213,16 @@ Prefab:
       value: 
       objectReference: {fileID: 1276781036005640, guid: 6d087c35a3040d24f80d1a42d91d89e8,
         type: 2}
+    - target: {fileID: 114066325634226534, guid: 4624c17e34f771d43bd8423ba70f3b5f,
+        type: 2}
+      propertyPath: angg
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114066325634226534, guid: 4624c17e34f771d43bd8423ba70f3b5f,
+        type: 2}
+      propertyPath: n
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114456888620956628, guid: 4624c17e34f771d43bd8423ba70f3b5f, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 4624c17e34f771d43bd8423ba70f3b5f, type: 2}
