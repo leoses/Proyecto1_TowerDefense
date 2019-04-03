@@ -10,16 +10,16 @@ public class PlayerNexusDead : MonoBehaviour {
     void Start()
     {
         player = gameObject.GetComponent<PlayerMovement>();
-        if (player == null)
-        {
-            GameManager.FindNexus(this);
-        }
-
-        else
+        if (player != null)
         {
             GameManager.FindPlayer(this);
-    
         }
+
+        /*else
+        {
+            GameManager.FindNexus(this);
+    
+        }*/
     }
 
     public void PlayerRespawn()

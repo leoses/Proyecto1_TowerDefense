@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance = null;
     static PlayerNexusDead player;
-    static PlayerNexusDead nexus;
+    //static PlayerNexusDead nexus;
 
     //Distintos valores generales del juego
     static public string areaKey = "space";
@@ -105,11 +105,11 @@ public class GameManager : MonoBehaviour {
         uiManager.ActualizaMuni(ammo); //Actualiza el UI
     }
 
-    public static void FindNexus(PlayerNexusDead nexus1)
+    /*public static void FindNexus(PlayerNexusDead nexus1)
     {
         nexus = nexus1;
         //Debug.Log(nexus);
-    }
+    }*/
 
     public static void FindPlayer(PlayerNexusDead player1)
     {

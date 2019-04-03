@@ -57,6 +57,12 @@ public class UIManager : MonoBehaviour {
         GameManager.instance.ChangeScene(scene);
     }
 
+    public void ExitGame()
+    {
+        Application.Quit();
+        //Solo cierra la aplicación ejecutable (.exe) no el editor
+    }
+
     // Metodo que abre las opciones al terminar el juego
     public void End (bool win)
     {
