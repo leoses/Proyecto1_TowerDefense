@@ -5,7 +5,7 @@ using UnityEngine;
 public class Escopeta : MonoBehaviour {
 
     public AudioClip sound;
-    public AudioSource source;
+    AudioSource source;
 
     //Disparo de la escopeta
     public int n;
@@ -20,7 +20,7 @@ public class Escopeta : MonoBehaviour {
 
     private void Start()
     {
-        source.clip = sound;
+        source = gameObject.GetComponentInParent<AudioSource>();
         pool = GameObject.FindGameObjectWithTag("bulletpool");
         tiempo = cadencia;
     }
@@ -42,6 +42,7 @@ public class Escopeta : MonoBehaviour {
                 Quaternion rotation = Quaternion.Euler(v);  //Es igual que antes, solo que ahora valora tb los ejes sacados del ToAngleAxis y va mejor
                 BalaEscopeta balaNueva = Instantiate<BalaEscopeta>(bala, transform.position, rotation, pool.transform);
             }
+            source.clip = sound;
             source.Play();
             tiempo = 0;
             GameManager.instance.CambiaMunicion(-1);

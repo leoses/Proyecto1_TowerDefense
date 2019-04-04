@@ -5,7 +5,7 @@ using UnityEngine;
 public class TurretShooting : MonoBehaviour {
 
     public AudioClip sound;
-    public AudioSource source;
+    AudioSource source;
 
     public Bullet bulletPref;
     Collider2D[] contacts;
@@ -50,6 +50,7 @@ public class TurretShooting : MonoBehaviour {
 
     public void TurretUpdate(int impDam, float impRate)
     {
+        source = gameObject.GetComponent<AudioSource>();
         damage = impDam;
         fireRate = impRate;
     }

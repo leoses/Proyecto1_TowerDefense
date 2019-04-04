@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
 
     public AudioClip sound;
-    public AudioSource source;
+    AudioSource source;
 
     //Disparo de la pistola
     float tiempo;
@@ -15,6 +15,7 @@ public class Shoot : MonoBehaviour {
 
     private void Start()
     {
+        source = gameObject.GetComponentInParent<AudioSource>();
         pool = GameObject.FindGameObjectWithTag("bulletpool");
         tiempo = cadencia;
     }

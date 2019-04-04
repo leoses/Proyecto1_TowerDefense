@@ -5,13 +5,13 @@ using UnityEngine;
 public class MeleeDamage : MonoBehaviour {
 
     public AudioClip sound;
-    public AudioSource source;
+    AudioSource source;
     public int damage = 50;
     Health found;
 
     private void Start()
     {
-        source.clip = sound;
+        source = gameObject.GetComponentInParent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +22,7 @@ public class MeleeDamage : MonoBehaviour {
         if (found != null)
         {
             found.RecieveDamage(damage);
+            source.clip = sound;
             source.Play();
         }
     }

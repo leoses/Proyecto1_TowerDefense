@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 public class TurretArea : MonoBehaviour
 {
     public AudioClip sound;
-    public AudioSource source;
+    AudioSource source;
 
     public Tilemap tilemap;
     public int cost = 150;
@@ -24,7 +24,7 @@ public class TurretArea : MonoBehaviour
 
     void Start()
     {
-        source.clip = sound;
+        source = gameObject.GetComponentInParent<AudioSource>();
         line = gameObject.GetComponent<LineRenderer>(); //Se coge el componente line renderer que es la representación visual del área de construcción
         line.useWorldSpace = false; //No se usan coordenadas del mundo
 
@@ -55,24 +55,20 @@ public class TurretArea : MonoBehaviour
             {
                 Vector3Int hit = Vector3Int.FloorToInt(ray.GetPoint(enter));
 
-                //Debug.Log("plane.Raycast(ray, out enter)");
-
                 if (tilemap.ContainsTile(tilemap.GetTile(hit)))
                 {
-
-                    //Debug.Log("tilemap.ContainsTile(tilemap.GetTile(hit)");
                     //Distancia entre posiciones
                     distance = new Vector2(Mathf.Abs(hit.x - transform.position.x), Mathf.Abs(hit.y - transform.position.y));
 
                     if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && t >.5) //&& GameManager.dinero >= cost) //Si se está a rango y se tiene el dinero
                     {
                         t = 0;
-                        //Debug.Log("instanciado");
                         Vector3 poshit = new Vector3(hit.x + 0.5f, hit.y + 0.5f, hit.z - 1);
 
                         //Se sustituye la pared sin torreta por una pared con torreta
-                        Instantiate(turretPref, poshit, Quaternion.identity);
+                        source.clip = sound;
                         source.Play();
+                        Instantiate(turretPref, poshit, Quaternion.identity);
                         GameManager.instance.GanaDinero(-cost);
                     }
                 }

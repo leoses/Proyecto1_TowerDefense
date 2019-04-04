@@ -963,15 +963,15 @@ MonoBehaviour:
   - {fileID: 270445162}
   - {fileID: 1755145614}
   Melee: {fileID: 1762836818851396, guid: 3b7880bb4ba7d534d804a63e44f2b07f, type: 2}
-  Distancia: {fileID: 1374337431312204, guid: e4d29cdee2f99334d86dd6bcd03bc82a, type: 2}
+  Distancia: {fileID: 1429267284795160, guid: e4d29cdee2f99334d86dd6bcd03bc82a, type: 2}
   Teletransportador: {fileID: 1834245347082256, guid: 356d951b67b783f4a93f7a31377dae88,
     type: 2}
   Invocador: {fileID: 1789632211956472, guid: fce9ee0853285f846aef776686142dd3, type: 2}
   Inhibidor: {fileID: 0}
   Escudo: {fileID: 1762836818851396, guid: b918afb80b0a9f142becd61882a018fe, type: 2}
   oleada:
-  - melee: 1
-    distancia: 0
+  - melee: 0
+    distancia: 1
     teletransportador: 0
     invocador: 0
     inhibidor: 0
@@ -1027,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: 5
-  dinero: 0
+  dinero: 1000
   vidaMax: 300
   vidaJugador: 300
   vidaNucleo: 3000
