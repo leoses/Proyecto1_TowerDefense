@@ -4,6 +4,9 @@ using UnityEngine.Tilemaps;
 
 public class TurretArea : MonoBehaviour
 {
+    public AudioClip sound;
+    AudioSource source;
+
     public Tilemap tilemap;
     public int cost = 150;
     public GameObject turretPref;
@@ -21,6 +24,7 @@ public class TurretArea : MonoBehaviour
 
     void Start()
     {
+        source = gameObject.GetComponentInParent<AudioSource>();
         line = gameObject.GetComponent<LineRenderer>(); //Se coge el componente line renderer que es la representación visual del área de construcción
         line.useWorldSpace = false; //No se usan coordenadas del mundo
 
@@ -30,6 +34,7 @@ public class TurretArea : MonoBehaviour
 
     private void Update()
     {
+<<<<<<< HEAD
         if (Time.timeScale > 0)
         {
             t += Time.deltaTime;
@@ -39,6 +44,17 @@ public class TurretArea : MonoBehaviour
                 line.positionCount = segments + 1;
                 CreatePoints();
                 done = true;
+=======
+        t += Time.deltaTime;
+
+        //El booleano done aumenta la eficiencia del script (muy a menudo no se ejecutará ningún if debido a él)
+        if (!done && Input.GetKey(GameManager.areaKey)) //Si no está representada el área y se pulsa el espacio se crea el círculo
+        {
+            line.positionCount = segments + 1;
+            CreatePoints();
+            done = true;
+        }
+>>>>>>> master
 
 
             }
@@ -49,6 +65,7 @@ public class TurretArea : MonoBehaviour
                 done = false;
             }
 
+<<<<<<< HEAD
             if (Input.GetKey(KeyCode.Mouse1))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -72,6 +89,23 @@ public class TurretArea : MonoBehaviour
                             Instantiate(turretPref, poshit, Quaternion.identity);
                             GameManager.instance.GanaDinero(-cost);
                         }
+=======
+                if (tilemap.ContainsTile(tilemap.GetTile(hit)))
+                {
+                    //Distancia entre posiciones
+                    distance = new Vector2(Mathf.Abs(hit.x - transform.position.x), Mathf.Abs(hit.y - transform.position.y));
+
+                    if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && t >.5) //&& GameManager.dinero >= cost) //Si se está a rango y se tiene el dinero
+                    {
+                        t = 0;
+                        Vector3 poshit = new Vector3(hit.x + 0.5f, hit.y + 0.5f, hit.z - 1);
+
+                        //Se sustituye la pared sin torreta por una pared con torreta
+                        source.clip = sound;
+                        source.Play();
+                        Instantiate(turretPref, poshit, Quaternion.identity);
+                        GameManager.instance.GanaDinero(-cost);
+>>>>>>> master
                     }
                 }
             }

@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
     static PlayerNexusDead player;
-    static PlayerNexusDead nexus;
+    //static PlayerNexusDead nexus;
 
     //Distintos valores generales del juego
     static public string areaKey = "space";
@@ -55,9 +55,17 @@ public class GameManager : MonoBehaviour
     }
 
     //Metodo que termina el juego
+<<<<<<< HEAD:Proyecto/Assets/Scripts/Manager/GameManager.cs
     public void EndGame()
     {
         ChangeScene("FinPartida");
+=======
+    public void EndGame( bool win)
+    {
+        
+        uiManager.End(win); 
+        
+>>>>>>> master:Proyecto/Assets/Scripts/GameManager.cs
     }
 
     // metodo que cambia de escena en el juego
@@ -95,7 +103,7 @@ public class GameManager : MonoBehaviour
         uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax);
         //si la vida del núcleo es menor o igual a 0 entonces termina el juego.
         if (vidaNucleo <= 0)
-            EndGame();
+            EndGame(false);
     }
 
     public void CambiaMunicion(int cant)
@@ -104,10 +112,15 @@ public class GameManager : MonoBehaviour
         uiManager.ActualizaMuni(ammo); //Actualiza el UI
     }
 
-    public static void FindNexus(PlayerNexusDead nexus1)
+    /*public static void FindNexus(PlayerNexusDead nexus1)
     {
         nexus = nexus1;
+<<<<<<< HEAD:Proyecto/Assets/Scripts/Manager/GameManager.cs
     }
+=======
+        //Debug.Log(nexus);
+    }*/
+>>>>>>> master:Proyecto/Assets/Scripts/GameManager.cs
 
     public static void FindPlayer(PlayerNexusDead player1)
     {

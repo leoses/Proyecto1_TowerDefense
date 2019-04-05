@@ -6,6 +6,9 @@ using Random = System.Random;
 public class Summoner : MonoBehaviour
 {
 
+    public AudioClip sound;
+    AudioSource source;
+
     public Enemy summoningEnemy;
     public int averageWalk = 6;
     public float summoningRate = 1.5f;
@@ -16,6 +19,7 @@ public class Summoner : MonoBehaviour
 
     private void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         Random rnd = new Random();
         limit = rnd.Next(averageWalk - 1, averageWalk + 2);
     }
@@ -37,6 +41,8 @@ public class Summoner : MonoBehaviour
 
     void Summon()
     {
+        source.clip = sound;
+        source.Play();
         Enemy newEnemy = Instantiate(summoningEnemy, transform.position, transform.rotation);
         newEnemy.NewDir(dir);
     }

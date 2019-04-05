@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class DistanceShooting : MonoBehaviour {
 
+    public AudioClip sound;
+    public AudioSource source;
+
     private GameObject bulletpool, target;
     public Bullet bulletprefab;
     Vector2 dir;
@@ -20,7 +23,6 @@ public class DistanceShooting : MonoBehaviour {
     {
         bulletpool = GameObject.FindGameObjectWithTag("bulletpool");
         target = GameObject.FindGameObjectWithTag("Nexus");
-        if (higherCadence < lowerCadence) Debug.LogError("La cadencia máxima es menor que la mínima, cambiadlo");
     }
 
     private void Update()
@@ -31,7 +33,8 @@ public class DistanceShooting : MonoBehaviour {
             if(time >= higherCadence)
             {
                 Shooting();
-                if (higherCadence > lowerCadence) higherCadence -= disminutionRange;
+                if (higherCadence > lowerCadence)
+                    higherCadence -= disminutionRange;
                 time = 0;
             }
         }
@@ -41,6 +44,8 @@ public class DistanceShooting : MonoBehaviour {
     {
         dir = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.y - transform.position.y);
         Bullet newBullet = Instantiate<Bullet>(bulletprefab, transform.position, Quaternion.identity, bulletpool.transform);
+        source.clip = sound;
+        source.Play();
         newBullet.newValues(dir, damage);
     }
 

@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seconds: 2
-  damage: 5
+  damage: 50
 --- !u!114 &114863355484070790
 MonoBehaviour:
   m_ObjectHideFlags: 1

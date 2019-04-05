@@ -13,6 +13,9 @@ struct Update
 public class TurretUpdate : MonoBehaviour
 {
 
+    public AudioClip sound;
+    AudioSource source;
+
     [SerializeField]
     Update first;
 
@@ -25,6 +28,7 @@ public class TurretUpdate : MonoBehaviour
 
     private void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         //Se busca el transform del jugador usando el tag
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
@@ -57,5 +61,7 @@ public class TurretUpdate : MonoBehaviour
                 }
                 break;
         }
+        source.clip = sound;
+        source.Play();
     }
 }
