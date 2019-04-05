@@ -6,6 +6,11 @@ public class Health : MonoBehaviour
 {
     public int health;
     public int money;
+    Animator sprite;
+    private void Start()
+    {
+        sprite = this.gameObject.GetComponentInChildren<Animator>();
+    }
 
     //Metodo que resta vida y destruye o respawnea cuando esta llega a 0;
     public void RecieveDamage(int damage)
@@ -25,7 +30,8 @@ public class Health : MonoBehaviour
             else
             {
                 GameManager.instance.GanaDinero(money);
-                Destroy(this.gameObject);
+                sprite.SetBool("IsDead", true);
+                Destroy(this.gameObject, 1f);
             }
         }
     }

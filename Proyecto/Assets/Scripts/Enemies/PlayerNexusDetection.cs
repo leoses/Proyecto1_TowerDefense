@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerNexusDetection : MonoBehaviour {
     //Vector que guardará la dirección que lleva el enemigo antes de detectar al jugador
+
     Vector2 guardaMov;
     Enemy enemigo;
     Ghost ghost;
