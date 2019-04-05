@@ -30,13 +30,13 @@ public class UIManager : MonoBehaviour {
     //Muestra el dinero
     public void ActualizaDinero(int Dinero)
     {
-        DineroText.text = "Dinero: " + Dinero.ToString();
+        DineroText.text = Dinero.ToString();
     }
 
     //Muestra la munición
     public void ActualizaMuni(int ammo)
     {
-        MunicionText.text = "Munición: " + ammo.ToString();
+        MunicionText.text = ammo.ToString();
     }
 
     //Reduce proporcionalmente la barra de vida del jugador y/o del nucleo respecto de la vida restante.
@@ -48,8 +48,8 @@ public class UIManager : MonoBehaviour {
     // actualiza y muestra la informacion de las oleadas
     public void Oleada(int oleada, int tiempo, int totaloleada, int tiempoact)
     {
-        TiempoText.text = "Tiempo:" +tiempoact + "/" +  tiempo;
-        OleadaText.text = "Oleada:" + oleada + "/" + totaloleada;
+        TiempoText.text = tiempoact + "/" +  tiempo;
+        OleadaText.text = oleada + "/" + totaloleada;
     }
 
     public void UpdateScene(string scene)
