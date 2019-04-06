@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Inhibitor : MonoBehaviour
 {
+    public AudioClip sound;
+    AudioSource source;
+
     Enemy enemy;
     TurretShooting turret;
     public float range = 4;
@@ -11,6 +14,7 @@ public class Inhibitor : MonoBehaviour
 
     void Start()
     {
+        source = gameObject.GetComponentInParent<AudioSource>();
         enemy = gameObject.GetComponentInParent<Enemy>();
         gameObject.GetComponent<CircleCollider2D>().radius = range;
     }
@@ -24,6 +28,8 @@ public class Inhibitor : MonoBehaviour
             enemy.enabled = false;
             turret.Disabled();
             worked = true;
+            source.clip = sound;
+            source.Play();
         }
     }
 
