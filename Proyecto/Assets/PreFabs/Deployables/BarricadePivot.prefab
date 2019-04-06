@@ -52,8 +52,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467386894604622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 6.5, y: 0, z: 0}
+  m_LocalScale: {x: 1.75, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 4815948918507204}
   m_RootOrder: 0
@@ -128,7 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f02d7c43a8c0f4a8f37e33333710c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heal: {fileID: 0}
   health: 300
+  money: 0
+  dropProb: 0
 --- !u!212 &212225867204723780
 SpriteRenderer:
   m_ObjectHideFlags: 1
