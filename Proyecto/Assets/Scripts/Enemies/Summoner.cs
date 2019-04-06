@@ -12,11 +12,13 @@ public class Summoner : MonoBehaviour {
     float time = 0;
     float limit;
     bool stopped = false;
+    private Animator sprite;
 
     private void Start()
     {
         Random rnd = new Random();
         limit = rnd.Next(averageWalk - 1, averageWalk + 2);
+        sprite = this.gameObject.GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -26,6 +28,7 @@ public class Summoner : MonoBehaviour {
             time += Time.deltaTime;
             if (time > limit)
             {
+                sprite.SetBool("StartSummoning", true);
                 dir = gameObject.GetComponent<Enemy>().PassDir();
                 gameObject.GetComponent<Enemy>().enabled = false;
                 stopped = true;
