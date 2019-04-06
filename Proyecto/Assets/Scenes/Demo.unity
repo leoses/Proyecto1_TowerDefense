@@ -521,7 +521,7 @@ MonoBehaviour:
     invocador: 0
     inhibidor: 0
     escudo: 0
-    tiempo: 1000
+    tiempo: 5
     municion: 0
   - melee: 0
     distancia: 0
