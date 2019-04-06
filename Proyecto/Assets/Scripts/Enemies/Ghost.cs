@@ -35,10 +35,13 @@ public class Ghost : MonoBehaviour
 
     public void Chase()
     {
-        gameObject.GetComponent<Enemy>().enabled = false;
-        active = true;
-        source.clip = startChase;
-        source.Play();
+        if (!active)
+        {
+            gameObject.GetComponent<Enemy>().enabled = false;
+            active = true;
+            source.clip = startChase;
+            source.Play();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -46,6 +49,7 @@ public class Ghost : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
             source.clip = teleport;
+            source.Play();
             target.transform.position = pos.position;
             Destroy(gameObject);
         }

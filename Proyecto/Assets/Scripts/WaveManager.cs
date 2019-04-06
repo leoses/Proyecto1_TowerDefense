@@ -74,7 +74,7 @@ public class WaveManager : MonoBehaviour
 
             if (t > 1)
             {
-                int r = rnd.Next(0, 4);
+                int r = rnd.Next(0, 6);
 
                 if (cont[0] < oleada[i].melee && r == 0)
                 {

@@ -176,7 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 25078d7667c439b41a698ce36f691ec2, type: 3}
-  source: {fileID: 82399183599874468}
   first:
     cost: 150
     damage: 50
@@ -197,11 +196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: e082772f601364f4283c50f72af9a50a, type: 3}
-  source: {fileID: 82399183599874468}
   bulletPref: {fileID: 114988581333576926, guid: c056cae84658e194abd1e61ac2d80e73,
     type: 2}
   fireRate: 1
-  damage: 35
+  damage: 10
 --- !u!212 &212521804880120018
 SpriteRenderer:
   m_ObjectHideFlags: 1

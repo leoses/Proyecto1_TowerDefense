@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
-public class Summoner : MonoBehaviour {
-
+public class Summoner : MonoBehaviour
+{
     public AudioClip sound;
     AudioSource source;
 
@@ -44,5 +44,10 @@ public class Summoner : MonoBehaviour {
         source.Play();
         Enemy newEnemy = Instantiate(summoningEnemy, transform.position, transform.rotation);
         newEnemy.NewDir(dir);
+    }
+
+    public void Stop()
+    {
+        time = 100;
     }
 }

@@ -10,8 +10,8 @@ struct Update
     public float fireRate;
 }
 
-public class TurretUpdate : MonoBehaviour {
-
+public class TurretUpdate : MonoBehaviour
+{
     public AudioClip sound;
     AudioSource source;
 
@@ -20,7 +20,6 @@ public class TurretUpdate : MonoBehaviour {
 
     [SerializeField]
     Update second;
-
 
     int level = 1;
     Transform player;
@@ -39,25 +38,27 @@ public class TurretUpdate : MonoBehaviour {
         //Distancia entre posiciones
         distance = new Vector2(Mathf.Abs(transform.position.x - player.position.x), Mathf.Abs(transform.position.y - player.position.y));
 
+        //Dependiendo del nivel de la torreta
         switch (level)
         {
             case 1:
-                if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && GameManager.instance.dinero >= first.cost && level < 3)
+                //Si se tiene dinero, se está a rango y no está a nivel máximo
+                if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && GameManager.instance.RetMoney() >= first.cost && level < 3)
                 {
-                    gameObject.GetComponent<TurretShooting>().TurretUpdate(first.damage, first.fireRate);
+                    gameObject.GetComponent<TurretShooting>().TurretUpgrade(first.damage, first.fireRate);
                     GameManager.instance.GanaDinero(-first.cost);
                     level++;
                 }
-                    break;
+                break;
 
             case 2:
-                if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && GameManager.instance.dinero >= second.cost && level < 3)
+                if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && GameManager.instance.RetMoney() >= second.cost && level < 3)
                 {
-                    gameObject.GetComponent<TurretShooting>().TurretUpdate(second.damage, second.fireRate);
+                    gameObject.GetComponent<TurretShooting>().TurretUpgrade(second.damage, second.fireRate);
                     GameManager.instance.GanaDinero(-second.cost);
                     level++;
                 }
-                    break;
+                break;
         }
         source.clip = sound;
         source.Play();

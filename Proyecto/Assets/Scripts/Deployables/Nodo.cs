@@ -27,14 +27,12 @@ public class Nodo : MonoBehaviour {
         {
             if (rnd.Next(0, 11) < p1 && collision.gameObject.GetComponent<Enemy>())
             {
-                Debug.Log(dir1);
                 enemy.Rotation(dir1);
                 enemy.NewDir(dir1);
             }
 
             else
             {
-                Debug.Log(dir2);
                 enemy.Rotation(dir2);
                 enemy.NewDir(dir2);
             }

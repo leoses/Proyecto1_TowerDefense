@@ -28,57 +28,59 @@ public class TurretArea : MonoBehaviour
         line = gameObject.GetComponent<LineRenderer>(); //Se coge el componente line renderer que es la representación visual del área de construcción
         line.useWorldSpace = false; //No se usan coordenadas del mundo
 
-        distanceFromCamera = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z- -10);
+        distanceFromCamera = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z - -10);
         plane = new Plane(Vector3.forward, distanceFromCamera);
     }
 
     private void Update()
     {
-        t += Time.deltaTime;
-
-        //El booleano done aumenta la eficiencia del script (muy a menudo no se ejecutará ningún if debido a él)
-        if (!done && Input.GetKey(GameManager.areaKey)) //Si no está representada el área y se pulsa el espacio se crea el círculo
+        if (Time.timeScale > 0)
         {
-            line.positionCount = segments + 1;
-            CreatePoints();
-            done = true;
-        }
-
-        if (Input.GetKey(KeyCode.Mouse1))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            float enter = 0f;
-
-            //Debug.Log("Input.GetKey(KeyCode.Mouse1");
-
-            if (plane.Raycast(ray, out enter))
+            t += Time.deltaTime;
+            //El booleano done aumenta la eficiencia del script (muy a menudo no se ejecutará ningún if debido a él)
+            if (!done && Input.GetKey(GameManager.areaKey)) //Si no está representada el área y se pulsa el espacio se crea el círculo
             {
-                Vector3Int hit = Vector3Int.FloorToInt(ray.GetPoint(enter));
+                line.positionCount = segments + 1;
+                CreatePoints();
+                done = true;
 
-                if (tilemap.ContainsTile(tilemap.GetTile(hit)))
+
+            }
+
+            else if (done && !Input.GetKey(GameManager.areaKey)) //Si ya está representada y se deja de pulsar el espacio se borra
+            {
+                line.positionCount = 0;
+                done = false;
+            }
+
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                float enter = 0f;
+
+                if (plane.Raycast(ray, out enter))
                 {
-                    //Distancia entre posiciones
-                    distance = new Vector2(Mathf.Abs(hit.x - transform.position.x), Mathf.Abs(hit.y - transform.position.y));
+                    Vector3Int hit = Vector3Int.FloorToInt(ray.GetPoint(enter));
 
-                    if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && t >.5) //&& GameManager.dinero >= cost) //Si se está a rango y se tiene el dinero
+                    if (tilemap.ContainsTile(tilemap.GetTile(hit)))
                     {
-                        t = 0;
-                        Vector3 poshit = new Vector3(hit.x + 0.5f, hit.y + 0.5f, hit.z - 1);
+                        //Distancia entre posiciones
+                        distance = new Vector2(Mathf.Abs(hit.x - transform.position.x), Mathf.Abs(hit.y - transform.position.y));
 
-                        //Se sustituye la pared sin torreta por una pared con torreta
-                        source.clip = sound;
-                        source.Play();
-                        Instantiate(turretPref, poshit, Quaternion.identity);
-                        GameManager.instance.GanaDinero(-cost);
+                        if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && t > .5 && GameManager.instance.RetMoney() >= cost) //Si se está a rango y se tiene el dinero
+                        {
+                            t = 0;
+                            Vector3 poshit = new Vector3(hit.x + 0.5f, hit.y + 0.5f, hit.z - 1);
+
+                            //Se sustituye la pared sin torreta por una pared con torreta
+                            source.clip = sound;
+                            source.Play();
+                            Instantiate(turretPref, poshit, Quaternion.identity);
+                            GameManager.instance.GanaDinero(-cost);
+                        }
                     }
                 }
             }
-        }
-
-        if (done && !Input.GetKey(GameManager.areaKey)) //Si ya está representada y se deja de pulsar el espacio se borra
-        {
-            line.positionCount = 0;
-            done = false;
         }
     }
 
@@ -100,5 +102,4 @@ public class TurretArea : MonoBehaviour
             angle += (360f / segments);
         }
     }
-
 }
