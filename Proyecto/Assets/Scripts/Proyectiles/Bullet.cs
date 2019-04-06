@@ -34,19 +34,17 @@ public class Bullet : MonoBehaviour
         if (damagedObject != null)
         {
             damagedObject.RecieveDamage(damage);
-            Destroy(gameObject);
         }
 
         else if (collision.gameObject.CompareTag("Nexus"))
         {
             GameManager.instance.PierdeVidaNucleo(damage);
-            Destroy(gameObject);
         }
 
         else if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.instance.PierdeVidaJugador(damage);
-            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

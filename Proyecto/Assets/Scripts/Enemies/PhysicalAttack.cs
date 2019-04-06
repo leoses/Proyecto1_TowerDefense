@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PhysicalAttack : MonoBehaviour {
 
+    public AudioClip sound;
+    AudioSource source;
+
     PlayerNexusDead planux;
     PlayerMovement player;
     //Tiempo que tarda en realizar un ataque
@@ -11,14 +14,11 @@ public class PhysicalAttack : MonoBehaviour {
     //Daño (podría ser una opción tener 2, una para el jugador y otra para el nucleo)
     public int damage;
     float time;
-    //Los atacantes fisicos hacen daño tanto al jugador como al nucleo
-    //Health nexus, player;
 
     private void Start()
     {
+        source = gameObject.GetComponentInParent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-        //nexus = GameObject.FindGameObjectWithTag("Nexus").GetComponent<Health>();
     }
 
     private void Update()
@@ -40,6 +40,9 @@ public class PhysicalAttack : MonoBehaviour {
         {
             if (planux != null)
             {
+                source.clip = sound;
+                source.Play();
+
                 if (player.gameObject == collision.gameObject)
                 {
                     GameManager.instance.PierdeVidaJugador(damage);

@@ -271,8 +271,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff4636fb244b26d40a8b9531a573880b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startChase: {fileID: 8300000, guid: 34b578b6482b4c5458936b11085871dc, type: 3}
-  teleport: {fileID: 0}
+  startChase: {fileID: 8300000, guid: 77ecbdd919ba25441a0685b654515cfb, type: 3}
+  teleport: {fileID: 8300000, guid: 893f219bbfc25d14b88b5b0e25fcc02a, type: 3}
   speed: 5
 --- !u!114 &114735596975596622
 MonoBehaviour:

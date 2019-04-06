@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4305274338721754}
   - component: {fileID: 61474684571064520}
-  - component: {fileID: 114172752795482302}
   - component: {fileID: 212796006261379804}
+  - component: {fileID: 114172752795482302}
   m_Layer: 0
   m_Name: BarricadeWall
   m_TagString: Untagged
@@ -113,9 +113,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 349506679
-  m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingLayerID: -88971463
+  m_SortingLayer: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300070, guid: c123f020b92e3cf4f979c9783b7d9c4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
