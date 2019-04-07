@@ -128,10 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f02d7c43a8c0f4a8f37e33333710c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurt1: {fileID: 8300000, guid: aa0a37b062eb0de49bf73b315375aff6, type: 3}
+  hurt2: {fileID: 8300000, guid: 7d12125ed17c6e641a070c8991125344, type: 3}
+  hurt3: {fileID: 8300000, guid: a0c7584ce7fabd24799b566ec17e6695, type: 3}
+  barricadeDestr: {fileID: 8300000, guid: 9d4a54e0976552047bd71cba9b119f25, type: 3}
   heal: {fileID: 0}
   health: 300
   money: 0
   dropProb: 0
+  hurtTime: 0
 --- !u!212 &212225867204723780
 SpriteRenderer:
   m_ObjectHideFlags: 1

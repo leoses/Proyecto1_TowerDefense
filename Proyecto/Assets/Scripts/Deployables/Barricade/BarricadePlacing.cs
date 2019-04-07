@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BarricadePlacing : MonoBehaviour
 {
+    public AudioClip sound;
+    AudioSource source;
 
     public GameObject barPref;
     SpriteRenderer color;
@@ -15,6 +17,7 @@ public class BarricadePlacing : MonoBehaviour
 
     private void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
         color = gameObject.GetComponent<SpriteRenderer>();
     }
@@ -39,6 +42,8 @@ public class BarricadePlacing : MonoBehaviour
             //Se crea la barricada en la dirección dada
             Instantiate(barPref, transform.position, Quaternion.Euler(0, 0, angle), transform);
             GameManager.instance.GanaDinero(-cost);
+            source.clip = sound;
+            source.Play();
         }
     }
 

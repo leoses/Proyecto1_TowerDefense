@@ -290,10 +290,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f02d7c43a8c0f4a8f37e33333710c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hurt1: {fileID: 8300000, guid: 7247f927206800f47abe1a76bbfd04f7, type: 3}
+  hurt2: {fileID: 8300000, guid: f286d65a5d8355541a5989afb3b9a619, type: 3}
+  hurt3: {fileID: 8300000, guid: 8563212b0a5a21d4888dd20b652d4de6, type: 3}
+  barricadeDestr: {fileID: 0}
   heal: {fileID: 114914408603696744, guid: 5c642abb3c9b90d46b549a687ad1487d, type: 2}
   health: 50
   money: 15
   dropProb: 0
+  hurtTime: 1
 --- !u!114 &114887439461139940
 MonoBehaviour:
   m_ObjectHideFlags: 1
