@@ -11,12 +11,14 @@ public class Ghost : MonoBehaviour
     Transform target;
     public float speed = 5f;
     bool active = false;
+    private Animator sprite;
 
     void Start()
     {
         Random rnd = new Random();
         pos = GameObject.FindWithTag("Position " + rnd.Next(1, 4)).transform;
         target = GameObject.FindWithTag("Player").transform;
+        sprite = this.gameObject.GetComponentInChildren<Animator>();
     }
 
     void FixedUpdate()
@@ -38,8 +40,9 @@ public class Ghost : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
+            sprite.SetBool("IsDead", true);
             target.transform.position = pos.position;
-            Destroy(gameObject);
+            Destroy(gameObject, 1f);
         }
     }
 }

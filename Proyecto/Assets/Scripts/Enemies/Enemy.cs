@@ -31,8 +31,7 @@ public class Enemy : MonoBehaviour {
         dir = new Vector2(0, 0);
         if (sprite != null)
         {
-            sprite.SetBool("PhysicalAttack", true);
-            sprite.SetBool("DistanceIdle", true);
+            sprite.SetBool("Idle", true);
         }
         return mov;
     }
@@ -42,8 +41,7 @@ public class Enemy : MonoBehaviour {
     {
         if (sprite != null)
         {
-            sprite.SetBool("PhysicalAttack", false);
-            sprite.SetBool("DistanceIdle", false);
+            sprite.SetBool("Idle", false);
         }
         dir = nuevo;
     }
