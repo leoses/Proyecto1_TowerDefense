@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         GameManager.instance.SetUIManager(this);
+        WaveManager.instance.SetUIManager(this);
         ReplayButton.gameObject.SetActive(false);
         NextLevelButton.gameObject.SetActive(false);
     }

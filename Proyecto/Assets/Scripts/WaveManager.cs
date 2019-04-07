@@ -55,6 +55,16 @@ public class WaveManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
+    //Variable que contiene la referencia al uiManager
+    static UIManager uiManager;
+
+
+    //Metodo para asignar quien es el uiManager de la escena
+    public void SetUIManager(UIManager newUI)
+    {
+        uiManager = newUI;
+    }
+
     void Start()
     {
         i = 0;
@@ -79,7 +89,7 @@ public class WaveManager : MonoBehaviour
                 if (cont[0] < oleada[i].melee && r == 0)
                 {
                     t = 0;
-                    spawn[rnd.Next(0,spawn.Length)].generar(Melee);
+                    spawn[rnd.Next(0, spawn.Length)].generar(Melee);
                     cont[0]++;
                 }
                 else if (cont[1] < oleada[i].distancia && r == 1)
@@ -114,7 +124,7 @@ public class WaveManager : MonoBehaviour
                 }
 
             }
-            
+
         }
         else
         {
@@ -125,9 +135,14 @@ public class WaveManager : MonoBehaviour
             for (int i = 0; i < cont.Length; i++) cont[i] = 0;
 
             if (i != oleada.Length - 1)
+            {
                 i++;
-            tiempowave = 0;
-            //else fin del nivel
+                tiempowave = 0;
+            }
+            else
+            {
+                uiManager.End(true);
+            }
         }
 
 
