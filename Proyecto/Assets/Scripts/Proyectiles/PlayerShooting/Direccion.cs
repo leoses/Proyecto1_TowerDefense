@@ -32,8 +32,8 @@ public class Direccion : MonoBehaviour {
 
     private void Update()
     {
-        //transform.LookAt(mouse);
-        transform.LookAt(point, mouse);
+        if (Time.timeScale > 0)
+            transform.LookAt(point, mouse);
     }
 
 }

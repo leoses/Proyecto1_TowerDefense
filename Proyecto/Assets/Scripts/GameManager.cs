@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     public static GameManager instance = null;
     static PlayerNexusDead player;
@@ -15,13 +16,13 @@ public class GameManager : MonoBehaviour {
     public const float turretRange = 4;
     public int ammo = 5;
     public int dinero = 0;
-    public int vidaMax = 300;
-    public int vidaJugador;
+    public float vidaMax = 300;
+    public float vidaJugador;
     float vidaNucleoMax = 3000;
     public float vidaNucleo;
     public int penaSeg, penaDin; // penalizaciones por muerte de tiempo y dinero
-   static private int  oleada, totaloleada, tiempoact, tiempo;
-    
+    static private int oleada, totaloleada, tiempoact, tiempo;
+
     //Variable que contiene la referencia al uiManager
     static UIManager uiManager;
 
@@ -54,11 +55,9 @@ public class GameManager : MonoBehaviour {
     }
 
     //Metodo que termina el juego
-    public void EndGame( bool win)
+    public void EndGame(bool win)
     {
-        
-        uiManager.End(win); 
-        
+        uiManager.End(win);
     }
 
     // metodo que cambia de escena en el juego
@@ -75,17 +74,17 @@ public class GameManager : MonoBehaviour {
     }
 
     //reduce la vida del jugador y llama al uiManager para reducir la barra de vida del jugador del HUD
-    public void PierdeVidaJugador(int daño)
+    public void PierdeVidaJugador(float daño)
     {
         vidaJugador -= daño;
-        uiManager.Damage(vidaJugador, uiManager.Healthbar, vidaMax);
+        uiManager.Damage(vidaJugador, uiManager.healthBar, vidaMax);
         //si la vida es menor o igual a 0 el jugador respawnea y la vida y la propia barra se ponen al máximo
         if (vidaJugador <= 0)
         {
             player.PlayerRespawn();
             Penalización();
             vidaJugador = vidaMax;
-            uiManager.Healthbar.fillAmount = 1;
+            uiManager.healthBar.fillAmount = 1;
         }
     }
 
@@ -93,7 +92,7 @@ public class GameManager : MonoBehaviour {
     public void PierdeVidaNucleo(int daño)
     {
         vidaNucleo -= daño;
-        uiManager.Damage(vidaNucleo, uiManager.Nexusbar, vidaNucleoMax);
+        uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax);
         //si la vida del núcleo es menor o igual a 0 entonces termina el juego.
         if (vidaNucleo <= 0)
             EndGame(false);
@@ -108,17 +107,15 @@ public class GameManager : MonoBehaviour {
     /*public static void FindNexus(PlayerNexusDead nexus1)
     {
         nexus = nexus1;
-        //Debug.Log(nexus);
     }*/
 
     public static void FindPlayer(PlayerNexusDead player1)
     {
         player = player1;
-        //Debug.Log(player);
     }
 
     // penalización por muerte del jugador
-    public void Penalización() 
+    public void Penalización()
     {
         dinero = dinero - penaDin;
         uiManager.ActualizaDinero(dinero);
@@ -126,17 +123,18 @@ public class GameManager : MonoBehaviour {
     }
 
     // metodo para llevar cuenta de las oleadas
-    public  void Oleadas(int Oleada, float Tiempo, int TotalOleada, float tmpact)
+    public void Oleadas(int Oleada, float Tiempo, int TotalOleada, float tmpact)
     {
-        tiempoact = (int)tmpact ;
+        tiempoact = (int)tmpact;
         tiempo = (int)Tiempo;
         oleada = Oleada;
         totaloleada = TotalOleada;
 
-       
-        print("tiempo:" + tiempoact);
-        uiManager.Oleada(oleada, tiempo, totaloleada,tiempoact );
-
+        uiManager.Oleada(oleada, tiempo, totaloleada, tiempoact);
     }
-  
+
+    public int RetMoney()
+    {
+        return (dinero);
+    }
 }

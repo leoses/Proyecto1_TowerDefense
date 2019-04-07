@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerNexusDetection : MonoBehaviour {
+public class PlayerNexusDetection : MonoBehaviour
+{
+
     //Vector que guardará la dirección que lleva el enemigo antes de detectar al jugador
-    Vector2 guardaMov;
     Enemy enemigo;
     Ghost ghost;
     PlayerMovement player;
@@ -30,7 +31,7 @@ public class PlayerNexusDetection : MonoBehaviour {
 
         else
         {
-            guardaMov = enemigo.StopEnemy();
+            enemigo.StopEnemy();
             if (distanceEnemy != null && bandera)
             {
                 distanceEnemy.ChangeBool(true);
@@ -44,7 +45,7 @@ public class PlayerNexusDetection : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!chase)
-            enemigo.NewDir(guardaMov);
+            enemigo.NewDir(Vector2.zero);
     }
 
     //Método para cambiar la rotación del area del ataque físico

@@ -5,6 +5,10 @@ using Random = System.Random;
 
 public class Ghost : MonoBehaviour
 {
+    public AudioClip startChase;
+    public AudioClip teleport;
+    AudioSource source;
+
     Transform pos;
     Vector3 targetPosition;
     Vector3 velocity = Vector3.zero;
@@ -14,6 +18,7 @@ public class Ghost : MonoBehaviour
 
     void Start()
     {
+        source = gameObject.GetComponent<AudioSource>();
         Random rnd = new Random();
         pos = GameObject.FindWithTag("Position " + rnd.Next(1, 4)).transform;
         target = GameObject.FindWithTag("Player").transform;
@@ -30,14 +35,21 @@ public class Ghost : MonoBehaviour
 
     public void Chase()
     {
-        gameObject.GetComponent<Enemy>().enabled = false;
-        active = true;
+        if (!active)
+        {
+            gameObject.GetComponent<Enemy>().enabled = false;
+            active = true;
+            source.clip = startChase;
+            source.Play();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerMovement>() != null)
         {
+            source.clip = teleport;
+            source.Play();
             target.transform.position = pos.position;
             Destroy(gameObject);
         }

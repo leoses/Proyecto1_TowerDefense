@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
-
+public class Bullet : MonoBehaviour
+{
+    Rigidbody2D rb;
     public int speed;
     int damage;
-    Rigidbody2D rb;
 
     void Start()
     {
@@ -27,16 +27,24 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        //No colisiona con torretas (se destruiría inmediatamente)
-        if (collision.gameObject.GetComponent<TurretShooting>() == null)
-            Destroy(gameObject);
-
         //Comprobamos si el objeto con el que ha colisionado la bala tiene algún script de salud
         //Si es así, causamos daño a dicho objeto
         Health damagedObject = collision.gameObject.GetComponent<Health>();
-        if (damagedObject != null) damagedObject.RecieveDamage(damage);
 
-        if (collision.gameObject.CompareTag("Nexus")) GameManager.instance.PierdeVidaNucleo(damage);
+        if (damagedObject != null)
+        {
+            damagedObject.RecieveDamage(damage);
+        }
 
+        else if (collision.gameObject.CompareTag("Nexus"))
+        {
+            GameManager.instance.PierdeVidaNucleo(damage);
+        }
+
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            GameManager.instance.PierdeVidaJugador(damage);
+        }
+        Destroy(gameObject);
     }
 }

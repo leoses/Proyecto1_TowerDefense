@@ -3,40 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour {
+public class UIManager : MonoBehaviour
+{
 
     //variables del inventaro
-    public Text DineroText;
-    public Text MunicionText;
-    public Image Healthbar;
-    public Image Nexusbar;
-    public Text TiempoText;
-    public Text OleadaText;
-    public GameObject EndGame;
+    public Text moneyText;
+    public Text ammoText;
+    public Text timeText;
+    public Text waveText;
     public Text EndGameText;
+    public Image healthBar;
+    public Image nexusBar;
+    public GameObject pausePanel;
+    public GameObject EndGame;
     public Button ReplayButton, NextLevelButton;
-    
+    bool active = false;
 
     //En el start hacemos saber al GameManager que este componente es el encargado de
     //actualizar la interfaz
     void Start()
     {
         GameManager.instance.SetUIManager(this);
-        EndGame.SetActive(false);
+        WaveManager.instance.SetUIManager(this);
         ReplayButton.gameObject.SetActive(false);
         NextLevelButton.gameObject.SetActive(false);
     }
 
-    //Muestra el dinero
-    public void ActualizaDinero(int Dinero)
+    void Update()
     {
-        DineroText.text = "Dinero: " + Dinero.ToString();
+        //Al pulsar el espacio se entra/sale del menú de pausa
+        if (Input.GetKeyDown("escape"))
+        {
+            if (!active)
+            {
+                pausePanel.SetActive(true);
+                active = true;
+                Time.timeScale = 0;
+            }
+
+            else
+            {
+                pausePanel.SetActive(false);
+                active = false;
+                Time.timeScale = 1;
+            }
+        }
+    }
+
+    //Muestra el dinero
+    public void ActualizaDinero(int money)
+    {
+        moneyText.text = money.ToString();
     }
 
     //Muestra la munición
     public void ActualizaMuni(int ammo)
     {
-        MunicionText.text = "Munición: " + ammo.ToString();
+        ammoText.text = ammo.ToString();
     }
 
     //Reduce proporcionalmente la barra de vida del jugador y/o del nucleo respecto de la vida restante.
@@ -46,10 +69,10 @@ public class UIManager : MonoBehaviour {
     }
 
     // actualiza y muestra la informacion de las oleadas
-    public void Oleada(int oleada, int tiempo, int totaloleada, int tiempoact)
+    public void Oleada(int wave, int time, int totalWaves, int actTime)
     {
-        TiempoText.text = "Tiempo:" +tiempoact + "/" +  tiempo;
-        OleadaText.text = "Oleada:" + oleada + "/" + totaloleada;
+        timeText.text = actTime + "/" + time;
+        waveText.text = wave + "/" + totalWaves;
     }
 
     public void UpdateScene(string scene)
@@ -64,10 +87,10 @@ public class UIManager : MonoBehaviour {
     }
 
     // Metodo que abre las opciones al terminar el juego
-    public void End (bool win)
+    public void End(bool win)
     {
         EndGame.SetActive(true);
-        if(win)
+        if (win)
         {
             EndGameText.text = "You Win";
             NextLevelButton.gameObject.SetActive(true);
@@ -78,12 +101,4 @@ public class UIManager : MonoBehaviour {
             ReplayButton.gameObject.SetActive(true);
         }
     }
-
-    //public void ColorPenalization( ref int t)
-    //{
-    //    int n = 3;
-    //    DineroText.color = Color.red;
-    //    TiempoText.color = Color.red;
-
-    //}
 }

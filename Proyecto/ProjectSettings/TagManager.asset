@@ -13,6 +13,7 @@ TagManager:
   - Position 1
   - Position 2
   - Position 3
+  - Spawn
   layers:
   - Default
   - TransparentFX
