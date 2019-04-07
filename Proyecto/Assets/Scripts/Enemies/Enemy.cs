@@ -29,14 +29,22 @@ public class Enemy : MonoBehaviour {
     {
         Vector2 mov = dir;
         dir = new Vector2(0, 0);
-        if (sprite != null) sprite.SetBool("PhysicalAttack", true);
+        if (sprite != null)
+        {
+            sprite.SetBool("PhysicalAttack", true);
+            sprite.SetBool("DistanceIdle", true);
+        }
         return mov;
     }
 
     //Método para devolverle al enemigo la velocidad que llevaba antes de detenerse por detectar al jugador
     public void NewDir(Vector2 nuevo)
     {
-        if (sprite != null) sprite.SetBool("PhysicalAttack", false);
+        if (sprite != null)
+        {
+            sprite.SetBool("PhysicalAttack", false);
+            sprite.SetBool("DistanceIdle", false);
+        }
         dir = nuevo;
     }
 
