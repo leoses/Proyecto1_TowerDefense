@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 432f5ff4bc9267e4e85e663c12729bc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 0}
+  sound: {fileID: 0}
 --- !u!1 &244315297
 GameObject:
   m_ObjectHideFlags: 0
@@ -3017,7 +3017,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.28527588, y: 0}
   m_AnchorMax: {x: 0.71500003, y: 0.1505951}
-  m_AnchoredPosition: {x: 0.000015258789, y: 31.3}
+  m_AnchoredPosition: {x: 0.000030517578, y: 31.30001}
   m_SizeDelta: {x: 0, y: -29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677282772
@@ -3662,7 +3662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.87434924}
   m_AnchorMax: {x: 0.3878571, y: 0.9726508}
-  m_AnchoredPosition: {x: 9.000015, y: -12}
+  m_AnchoredPosition: {x: 9, y: -12}
   m_SizeDelta: {x: -3, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &751316431
@@ -35072,6 +35072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af95a4e4c58cfc40988f2e27564e77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
   barPref: {fileID: 1189204526973168, guid: 279dbcebb0649df4f8c80caab8e2631a, type: 2}
   cost: 50
   angle: 90
@@ -60269,7 +60270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.87434924}
   m_AnchorMax: {x: 0.3878571, y: 0.9726508}
-  m_AnchoredPosition: {x: 9.000076, y: 9}
+  m_AnchoredPosition: {x: 9.000061, y: 9}
   m_SizeDelta: {x: -3.0000305, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1379834149
@@ -60436,6 +60437,10 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4101501334833090, guid: 9c0b70ccd39c22946b414c1810edb579, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4320249098684618, guid: 9c0b70ccd39c22946b414c1810edb579, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
@@ -64385,7 +64390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.73375064}
   m_AnchorMax: {x: 0.3878571, y: 0.8516247}
-  m_AnchoredPosition: {x: 7.5000153, y: -6.5}
+  m_AnchoredPosition: {x: 7.5, y: -6.5}
   m_SizeDelta: {x: -4, y: -8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479236846
@@ -65326,7 +65331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beb4d2771af25c7498d68f2635ccd992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2015980096}
+  target: {fileID: 1841177912}
   smoothTime: 0.1
 --- !u!4 &1726691769 stripped
 Transform:
@@ -65611,6 +65616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af95a4e4c58cfc40988f2e27564e77c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: {fileID: 0}
   barPref: {fileID: 1189204526973168, guid: 279dbcebb0649df4f8c80caab8e2631a, type: 2}
   cost: 50
   angle: 270
@@ -65779,6 +65785,20 @@ Prefab:
       propertyPath: turretPref
       value: 
       objectReference: {fileID: 1276781036005640, guid: 6d087c35a3040d24f80d1a42d91d89e8,
+        type: 2}
+    - target: {fileID: 4179305827980882, guid: 9ae16c36eb78c3b4f812ef01d96abc68, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179305827980882, guid: 9ae16c36eb78c3b4f812ef01d96abc68, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 114360598978356372, guid: 9ae16c36eb78c3b4f812ef01d96abc68,
+        type: 2}
+      propertyPath: bala
+      value: 
+      objectReference: {fileID: 114988581333576926, guid: c056cae84658e194abd1e61ac2d80e73,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ae16c36eb78c3b4f812ef01d96abc68, type: 2}
@@ -66140,6 +66160,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1841177912 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4179305827980882, guid: 9ae16c36eb78c3b4f812ef01d96abc68,
+    type: 2}
+  m_PrefabInternal: {fileID: 1771978034}
 --- !u!4 &1846868591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4744081712456406, guid: 861efd0f6757945498d73cd98ac88d12,
@@ -66837,11 +66862,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4744081712456406, guid: 861efd0f6757945498d73cd98ac88d12,
     type: 2}
   m_PrefabInternal: {fileID: 848926962}
---- !u!4 &2015980096 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4399622267434220, guid: 9ae16c36eb78c3b4f812ef01d96abc68,
-    type: 2}
-  m_PrefabInternal: {fileID: 1771978034}
 --- !u!4 &2025284527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4744081712456406, guid: 861efd0f6757945498d73cd98ac88d12,
@@ -67059,14 +67079,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c9b6a6c43bf9b408f1a4cd0d360646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DineroText: {fileID: 0}
-  MunicionText: {fileID: 0}
-  Healthbar: {fileID: 0}
-  Nexusbar: {fileID: 0}
-  TiempoText: {fileID: 0}
-  OleadaText: {fileID: 0}
-  EndGame: {fileID: 0}
+  moneyText: {fileID: 0}
+  ammoText: {fileID: 0}
+  timeText: {fileID: 0}
+  waveText: {fileID: 0}
   EndGameText: {fileID: 0}
+  healthBar: {fileID: 0}
+  nexusBar: {fileID: 0}
+  pausePanel: {fileID: 0}
+  EndGame: {fileID: 0}
   ReplayButton: {fileID: 0}
   NextLevelButton: {fileID: 0}
 --- !u!114 &2126244491

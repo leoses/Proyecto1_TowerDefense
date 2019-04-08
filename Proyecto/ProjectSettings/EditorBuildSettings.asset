@@ -8,9 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/FinPartida.unity
-    guid: 6dcc1ed6231946547a29e96968f330db
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Enemies.unity
     guid: 3ff7dd0b4e7ca3344a1344282bcaaa9c
@@ -20,13 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4c5b981f81bc8d240b2fa159105290cb
-  - enabled: 1
-    path: Assets/Scenes/eldineroesdinero.unity
-    guid: d3ba1b19cf6dd1e4f81b9f54b4c1eddc
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/LevelsMenu.unity
     guid: 49da876c26afc6d4da9fd9a29f77ae96
   - enabled: 1
     path: Assets/Scenes/ControlsMenu.unity
     guid: 9e6f1003ab15cee4fa468f9f4364295d
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 9c82ac993e2645d4696f9c8c7e67b7e8
   m_configObjects: {}
