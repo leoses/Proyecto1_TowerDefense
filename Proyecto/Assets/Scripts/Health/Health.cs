@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     AudioSource source;
 
     Inhibitor inh;
+    private Enemy enemy;
     public Healing heal;
     public int health;
     public int money;
@@ -26,6 +27,7 @@ public class Health : MonoBehaviour
     {
         source = gameObject.GetComponent<AudioSource>();
         sprite = this.gameObject.GetComponentInChildren<Animator>();
+        enemy = this.gameObject.GetComponent<Enemy>();
         if (transform.childCount > 0)
             inh = gameObject.transform.GetChild(0).gameObject.GetComponent<Inhibitor>();
     }
@@ -56,6 +58,7 @@ public class Health : MonoBehaviour
             else
             {
                 sprite.SetBool("IsDead", true);
+                enemy.enabled = false;
                 if (rnd.Next(1, 101) <= dropProb)
                     Instantiate(heal, transform.position, Quaternion.identity);
 
@@ -65,7 +68,7 @@ public class Health : MonoBehaviour
                 {
                     inh.Reactivate();
                 }
-                Destroy(this.gameObject, 1f);
+                Destroy(this.gameObject, 0.5f);
 
             }
         }
