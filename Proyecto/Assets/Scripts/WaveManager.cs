@@ -155,7 +155,7 @@ public class WaveManager : MonoBehaviour
 
         // llamada al game Manager para pasar las variables de las oleadas para sacarlas en pantalla
         int Total = oleada.Length;
-         GameManager.instance.Oleadas(i, oleada[i].tiempo, Total, tiempowave);
+        GameManager.instance.Oleadas(i + 1, oleada[i].tiempo, Total, tiempowave);
 
        
     }

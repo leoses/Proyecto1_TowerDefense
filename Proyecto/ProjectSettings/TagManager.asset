@@ -14,6 +14,7 @@ TagManager:
   - Position 2
   - Position 3
   - Spawn
+  - Music
   layers:
   - Default
   - TransparentFX

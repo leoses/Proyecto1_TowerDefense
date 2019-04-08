@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager instance = null;
+    Music music;
     static PlayerNexusDead player;
     //static PlayerNexusDead nexus;
 
@@ -52,12 +53,15 @@ public class GameManager : MonoBehaviour
         uiManager.ActualizaDinero(dinero);
         vidaJugador = vidaMax;
         vidaNucleo = vidaNucleoMax;
+        music = GameObject.FindWithTag("Music").GetComponent<Music>();
     }
 
     //Metodo que termina el juego
     public void EndGame(bool win)
     {
+        Time.timeScale = 0;
         uiManager.End(win);
+        music.PlayMusic(win);
     }
 
     // metodo que cambia de escena en el juego
