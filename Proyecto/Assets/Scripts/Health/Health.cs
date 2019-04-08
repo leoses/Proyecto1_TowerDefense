@@ -20,11 +20,12 @@ public class Health : MonoBehaviour
     public int dropProb;
     public float hurtTime;
     float time = 0;
+    Animator sprite;
 
     private void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
-
+        sprite = this.gameObject.GetComponentInChildren<Animator>();
         if (transform.childCount > 0)
             inh = gameObject.transform.GetChild(0).gameObject.GetComponent<Inhibitor>();
     }
@@ -54,6 +55,7 @@ public class Health : MonoBehaviour
             //Sino es enemigo
             else
             {
+                sprite.SetBool("IsDead", true);
                 if (rnd.Next(1, 101) <= dropProb)
                     Instantiate(heal, transform.position, Quaternion.identity);
 
@@ -63,7 +65,8 @@ public class Health : MonoBehaviour
                 {
                     inh.Reactivate();
                 }
-                Destroy(gameObject);
+                Destroy(this.gameObject, 1f);
+
             }
         }
 

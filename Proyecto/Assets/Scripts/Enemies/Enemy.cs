@@ -9,15 +9,18 @@ public class Enemy : MonoBehaviour
 
     public float speed;
     public Vector2 dir;
+
     Vector2 prevDir;
     PlayerNexusDetection detectionArea;
     Summoner sum;
+    private Animator sprite;
 
     //Por defecto, los enemigos comenzarán a moverse hacia la derecha del eje x
     private void Start()
     {
         sum = gameObject.GetComponent<Summoner>();
         detectionArea = gameObject.GetComponentInChildren<PlayerNexusDetection>();
+        sprite = gameObject.GetComponentInChildren<Animator>();
         Rotation(dir);
     }
     void Update()
@@ -34,6 +37,8 @@ public class Enemy : MonoBehaviour
 
         if (sum != null)
             sum.Stop();
+        sprite.SetBool("Idle", true);
+
     }
 
     //Método para devolverle al enemigo la velocidad que llevaba antes de detenerse por detectar al jugador
@@ -44,28 +49,48 @@ public class Enemy : MonoBehaviour
 
         else
             dir = direc;
+
+        sprite.SetBool("Idle", false);
     }
-    //Método para cambiar la rotación del area de ataque fisico
-    //En el distancia no es necesario puesto que su area es un circulo con centro en el pivote
-    //del padre
+
+    //Método para cambiar la rotación del area de ataque fisico y la orientación de los sprites de los enemigos
     public void Rotation(Vector2 newdir)
     {
         //Mismo eje, sentido contrario
-
-        if (dir == -1 * newdir) detectionArea.ChangeRotation(180);
+        if (dir == -1 * newdir)
+        {
+            detectionArea.ChangeRotation(180);
+            sprite.transform.Rotate(0, 0, 180);
+        }
         //Mismo eje misma direccion
         else if (dir == newdir) detectionArea.ChangeRotation(0);
         //Cambio de eje, pasamos de movernos en y a movernos en x
         else if (dir.x == 0)
         {
-            if (newdir.x == dir.y) detectionArea.ChangeRotation(-90);
-            else detectionArea.ChangeRotation(90);
+            if (newdir.x == dir.y)
+            {
+                detectionArea.ChangeRotation(-90);
+                sprite.transform.Rotate(0, 0, -90);
+            }
+            else
+            {
+                detectionArea.ChangeRotation(90);
+                sprite.transform.Rotate(0, 0, 90);
+            }
         }
         //Cambio de eje, pasamos de movernos en x a movernos en y
         else
         {
-            if (newdir.y == dir.x) detectionArea.ChangeRotation(90);
-            else detectionArea.ChangeRotation(-90);
+            if (newdir.y == dir.x)
+            {
+                detectionArea.ChangeRotation(90);
+                sprite.transform.Rotate(0, 0, 90);
+            }
+            else
+            {
+                detectionArea.ChangeRotation(-90);
+                sprite.transform.Rotate(0, 0, -90);
+            }
         }
     }
 
