@@ -18,14 +18,13 @@ public class DistanceShooting : MonoBehaviour {
     public float disminutionRange;
     public float lowerCadence;
     private float time = 0;
-    private Animator sprite;
+    public Animator sprite;
 
     private void Start()
     {
         bulletpool = GameObject.FindGameObjectWithTag("bulletpool");
         target = GameObject.FindGameObjectWithTag("Nexus");
         if (higherCadence < lowerCadence) Debug.LogError("La cadencia máxima es menor que la mínima, cambiadlo");
-        sprite = this.gameObject.GetComponentInChildren<Animator>();
     }
 
     private void Update()

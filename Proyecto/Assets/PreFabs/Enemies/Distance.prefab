@@ -151,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1325751348876070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.39592743, y: 1.5648607, z: 0}
+  m_LocalPosition: {x: 8.0547695, y: 4.533924, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4489244661368064}
@@ -457,6 +457,7 @@ MonoBehaviour:
   higherCadence: 2
   disminutionRange: 0.2
   lowerCadence: 0.2
+  sprite: {fileID: 95769561968880980}
 --- !u!114 &114297952177409364
 MonoBehaviour:
   m_ObjectHideFlags: 1
