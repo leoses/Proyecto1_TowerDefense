@@ -130,8 +130,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1448842850953592}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.2452974, y: 0.41694996, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
+  m_LocalPosition: {x: 11.451747, y: 2.2811909, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0}
   m_Children:
   - {fileID: 4794720083005836}
   - {fileID: 4946017746579554}
@@ -387,7 +387,7 @@ MonoBehaviour:
   summoningEnemy: {fileID: 114863355484070790, guid: 3b7880bb4ba7d534d804a63e44f2b07f,
     type: 2}
   averageWalk: 6
-  summoningRate: 1.5
+  summoningRate: 3
 --- !u!114 &114594615773299180
 MonoBehaviour:
   m_ObjectHideFlags: 1

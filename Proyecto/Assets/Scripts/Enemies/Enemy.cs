@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.Translate(dir * speed * Time.deltaTime);
+
     }
 
     //Método para parar al enemigo cuando detecta que el jugador o el núcleo están dentro de su área de ataque 
@@ -45,12 +46,12 @@ public class Enemy : MonoBehaviour
     public void NewDir(Vector2 direc)
     {
         if (direc == Vector2.zero)
+        {
             dir = prevDir;
-
+            sprite.SetBool("Idle", false);
+        }
         else
             dir = direc;
-
-        sprite.SetBool("Idle", false);
     }
 
     //Método para cambiar la rotación del area de ataque fisico y la orientación de los sprites de los enemigos

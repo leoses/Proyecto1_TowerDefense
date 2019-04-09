@@ -17,6 +17,10 @@ public class Healing : MonoBehaviour
             healPor = healPor / 100;
             healPor = GameManager.instance.vidaMax * healPor;
             GameManager.instance.PierdeVidaJugador(-healPor);
+            if(GameManager.instance.vidaJugador > GameManager.instance.vidaMax)
+            {
+                GameManager.instance.vidaJugador = GameManager.instance.vidaMax;
+            }
             Destroy(gameObject);
         }
     }

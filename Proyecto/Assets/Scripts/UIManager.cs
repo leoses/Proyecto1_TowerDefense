@@ -101,4 +101,10 @@ public class UIManager : MonoBehaviour
             ReplayButton.gameObject.SetActive(true);
         }
     }
+
+    public void ExitPauseMenu()
+    {
+        active = false;
+        pausePanel.SetActive(false);
+    }
 }
