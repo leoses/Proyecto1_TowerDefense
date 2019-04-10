@@ -370,7 +370,7 @@ MonoBehaviour:
   heal: {fileID: 114914408603696744, guid: 5c642abb3c9b90d46b549a687ad1487d, type: 2}
   health: 50
   money: 75
-  dropProb: 0
+  dropProb: 20
   hurtTime: 1
 --- !u!114 &114364649191406782
 MonoBehaviour:

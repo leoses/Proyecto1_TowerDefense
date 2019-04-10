@@ -358,9 +358,9 @@ MonoBehaviour:
   hurt3: {fileID: 8300000, guid: 8563212b0a5a21d4888dd20b652d4de6, type: 3}
   barricadeDestr: {fileID: 0}
   heal: {fileID: 114914408603696744, guid: 5c642abb3c9b90d46b549a687ad1487d, type: 2}
-  health: 50
+  health: 100
   money: 10
-  dropProb: 100
+  dropProb: 0
   hurtTime: 4
 --- !u!114 &114040065016625894
 MonoBehaviour:
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 87e6de05e1f538c44b2f7d3fd1a93097, type: 3}
   seconds: 2
-  damage: 50
+  damage: 25
 --- !u!114 &114863355484070790
 MonoBehaviour:
   m_ObjectHideFlags: 1
