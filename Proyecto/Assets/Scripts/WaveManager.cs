@@ -44,6 +44,9 @@ public class WaveManager : MonoBehaviour
     [SerializeField]
     Wave[] oleada;
 
+    // para el total de enemigos
+    int totalEnemy;
+
     void Awake()
     {
         if (instance == null)
@@ -156,7 +159,7 @@ public class WaveManager : MonoBehaviour
         // llamada al game Manager para pasar las variables de las oleadas para sacarlas en pantalla
         int Total = oleada.Length;
         GameManager.instance.Oleadas(i + 1, oleada[i].tiempo, Total, tiempowave);
-
+        
        
     }
     // metodo que penaliza al jugador quitandole tiempo de la oleada
@@ -164,4 +167,28 @@ public class WaveManager : MonoBehaviour
     {
         tiempowave = tiempowave + penalizacion;
     }
+
+    // Metodo para que el juego termine cuando te quedas sin enemigos
+    // contamos el total de enemigos de la partida
+    public void CountEnemy( )
+    {
+        totalEnemy = 0;
+        for (int i = 0; i < oleada.Length; i++)
+        {
+            totalEnemy = totalEnemy + oleada[i].melee + oleada[i].distancia + oleada[i].inhibidor + oleada[i].invocador + oleada[i].teletransportador + oleada[i].escudo;
+        }
+
+    }
+    //Cuando un enemigo muere, resta uno del total,
+    //cuando no quedan enemigos se acaba la partida
+    public void LessEnemy()
+    {
+        totalEnemy--;
+        if (totalEnemy <= 0)
+        {
+            uiManager.End(true);
+        }
+    }
+
+
 }

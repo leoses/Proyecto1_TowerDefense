@@ -141,4 +141,6 @@ public class GameManager : MonoBehaviour
     {
         return (dinero);
     }
+
+    
 }

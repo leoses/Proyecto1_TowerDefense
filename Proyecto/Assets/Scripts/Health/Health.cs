@@ -62,7 +62,11 @@ public class Health : MonoBehaviour
                 if (rnd.Next(1, 101) <= dropProb)
                     Instantiate(heal, transform.position, Quaternion.identity);
 
+                // llamamos al gameManager para que sume dinero
                 GameManager.instance.GanaDinero(money);
+
+                // Llamamos al wave manager para que reste uno a los enemigos que quedan
+                WaveManager.instance.LessEnemy();
 
                 if (inh != null)
                 {
