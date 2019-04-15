@@ -703,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammo: 5
-  dinero: 0
+  dinero: 1000
   vidaMax: 100
   vidaJugador: 100
   vidaNucleo: 1000
@@ -5618,6 +5618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 943650269}
   - component: {fileID: 943650268}
+  - component: {fileID: 943650270}
   m_Layer: 12
   m_Name: Pistola
   m_TagString: Untagged
@@ -5632,7 +5633,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 943650267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52b5041edb8e40644a15ebbb7437ad42, type: 3}
   m_Name: 
@@ -5655,6 +5656,21 @@ Transform:
   m_Father: {fileID: 392444814}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &943650270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943650267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575dd681ee3a411438fb35322ad3ba7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: d378263b3a3008244b13646759ce7786, type: 3}
+  damage: 50
+  cadencia: 1
+  bala: {fileID: 114988581333576926, guid: c056cae84658e194abd1e61ac2d80e73, type: 2}
 --- !u!4 &945483714 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4744081712456406, guid: 861efd0f6757945498d73cd98ac88d12,

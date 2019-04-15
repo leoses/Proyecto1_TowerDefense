@@ -559,6 +559,7 @@ GameObject:
   - component: {fileID: 97006076}
   - component: {fileID: 97006075}
   - component: {fileID: 97006074}
+  - component: {fileID: 97006073}
   m_Layer: 8
   m_Name: Manager
   m_TagString: Untagged
@@ -566,6 +567,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &97006073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97006072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a75b12ce10d38a248beb34e667404f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawn: []
+  Melee: {fileID: 1762836818851396, guid: 3b7880bb4ba7d534d804a63e44f2b07f, type: 2}
+  Distancia: {fileID: 1325751348876070, guid: e4d29cdee2f99334d86dd6bcd03bc82a, type: 2}
+  Teletransportador: {fileID: 1834245347082256, guid: 356d951b67b783f4a93f7a31377dae88,
+    type: 2}
+  Invocador: {fileID: 1448842850953592, guid: fce9ee0853285f846aef776686142dd3, type: 2}
+  Inhibidor: {fileID: 1993969115435252, guid: 8fecf2fd146395946aa6c2a27ecba86d, type: 2}
+  Escudo: {fileID: 1365132804840682, guid: b918afb80b0a9f142becd61882a018fe, type: 2}
+  oleada:
+  - melee: 0
+    distancia: 0
+    teletransportador: 0
+    invocador: 0
+    inhibidor: 0
+    escudo: 0
+    tiempo: 10
+    municion: 0
 --- !u!114 &97006074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,6 +769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 164744267}
   - component: {fileID: 164744266}
+  - component: {fileID: 164744268}
   m_Layer: 12
   m_Name: Pistola
   m_TagString: Untagged
@@ -754,7 +784,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 164744265}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52b5041edb8e40644a15ebbb7437ad42, type: 3}
   m_Name: 
@@ -777,6 +807,21 @@ Transform:
   m_Father: {fileID: 1594751367}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164744268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 164744265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575dd681ee3a411438fb35322ad3ba7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: d378263b3a3008244b13646759ce7786, type: 3}
+  damage: 50
+  cadencia: 0.5
+  bala: {fileID: 114988581333576926, guid: c056cae84658e194abd1e61ac2d80e73, type: 2}
 --- !u!1001 &212283128
 Prefab:
   m_ObjectHideFlags: 0
