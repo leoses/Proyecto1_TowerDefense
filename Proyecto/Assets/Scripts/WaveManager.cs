@@ -75,6 +75,9 @@ public class WaveManager : MonoBehaviour
         t = 0;
 
         foreach (int elem in cont) cont[elem] = 0;
+
+        // contamos los enemigos totales
+        CountEnemy();
     }
 
     void Update()
@@ -170,7 +173,7 @@ public class WaveManager : MonoBehaviour
 
     // Metodo para que el juego termine cuando te quedas sin enemigos
     // contamos el total de enemigos de la partida
-    public void CountEnemy( )
+    public void CountEnemy()
     {
         totalEnemy = 0;
         for (int i = 0; i < oleada.Length; i++)
