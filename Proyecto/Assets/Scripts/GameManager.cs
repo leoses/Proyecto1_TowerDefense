@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     static private int oleada, totaloleada, tiempoact, tiempo;
 
     //Variable que contiene la referencia al uiManager
-    static UIManager uiManager;
+    static UIManager uiManager = null;
 
 
     //Metodo para asignar quien es el uiManager de la escena
@@ -49,11 +49,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         //Al inicio se muestra la munición y dinero que se ha fijado como incial del jugador
-        uiManager.ActualizaMuni(ammo);
-        uiManager.ActualizaDinero(dinero);
+        if (uiManager != null)
+        {
+            uiManager.ActualizaMuni(ammo);
+            uiManager.ActualizaDinero(dinero);
+        }
         vidaJugador = vidaMax;
         vidaNucleo = vidaNucleoMax;
-        music = GameObject.FindWithTag("Music").GetComponent<Music>();
+        //music = GameObject.FindWithTag("Music").GetComponent<Music>();
     }
 
     //Metodo que termina el juego
