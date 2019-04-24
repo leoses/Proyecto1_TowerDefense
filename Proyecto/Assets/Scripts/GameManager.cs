@@ -84,7 +84,8 @@ public class GameManager : MonoBehaviour
     public void PierdeVidaJugador(float daño)
     {
         vidaJugador -= daño;
-        uiManager.Damage(vidaJugador, uiManager.healthBar, vidaMax);
+        uiManager.Damage(vidaJugador, uiManager.healthBar, vidaMax, true);
+
         //si la vida es menor o igual a 0 el jugador respawnea y la vida y la propia barra se ponen al máximo
         if (vidaJugador <= 0)
         {
@@ -99,7 +100,7 @@ public class GameManager : MonoBehaviour
     public void PierdeVidaNucleo(int daño)
     {
         vidaNucleo -= daño;
-        uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax);
+        uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax, false);
         //si la vida del núcleo es menor o igual a 0 entonces termina el juego.
         if (vidaNucleo <= 0)
             EndGame(false);

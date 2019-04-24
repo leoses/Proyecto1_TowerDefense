@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public Text EndGameText;
     public Image healthBar;
     public Image nexusBar;
+    public Image damageSignal;
     public GameObject pausePanel;
     public GameObject EndGame;
     public Button ReplayButton, NextLevelButton;
@@ -27,6 +28,7 @@ public class UIManager : MonoBehaviour
         WaveManager.instance.SetUIManager(this);
         ReplayButton.gameObject.SetActive(false);
         NextLevelButton.gameObject.SetActive(false);
+        damageSignal.gameObject.SetActive(false);
     }
 
     void Update()
@@ -48,6 +50,7 @@ public class UIManager : MonoBehaviour
                 Time.timeScale = 1;
             }
         }
+
     }
 
     //Muestra el dinero
@@ -63,9 +66,13 @@ public class UIManager : MonoBehaviour
     }
 
     //Reduce proporcionalmente la barra de vida del jugador y/o del nucleo respecto de la vida restante.
-    public void Damage(float Health, Image bar, float maxHealth)
+    public void Damage(float Health, Image bar, float maxHealth, bool player)
     {
         bar.fillAmount = Health / maxHealth;
+        if (player)
+        {   
+            damageSignal.gameObject.SetActive(true);
+        }
     }
 
     // actualiza y muestra la informacion de las oleadas
