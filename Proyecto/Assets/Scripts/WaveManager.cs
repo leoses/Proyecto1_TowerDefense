@@ -134,36 +134,18 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
-            GameManager.instance.CambiaMunicion(oleada[i].municion); //*
-
-            //foreach (int elem in cont) cont[elem-1] = 0;
-
-            for (int i = 0; i < cont.Length; i++) cont[i] = 0;
-
             if (i != oleada.Length - 1)
             {
+                for (int i = 0; i < cont.Length; i++) cont[i] = 0;
                 i++;
                 tiempowave = 0;
-            }
-            else
-            {
-                uiManager.End(true);
+                GameManager.instance.CambiaMunicion(oleada[i].municion);
             }
         }
-
-
-        /*
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log(tiempowave);
-            Debug.Log(i);
-        }*/
 
         // llamada al game Manager para pasar las variables de las oleadas para sacarlas en pantalla
         int Total = oleada.Length;
         GameManager.instance.Oleadas(i + 1, oleada[i].tiempo, Total, tiempowave);
-        
-       
     }
     // metodo que penaliza al jugador quitandole tiempo de la oleada
     public void PenalizacionT (float penalizacion)
@@ -184,12 +166,12 @@ public class WaveManager : MonoBehaviour
 
     //Cuando un enemigo muere, resta uno del total,
     //cuando no quedan enemigos se acaba la partida
-    public void LessEnemy(int m)
+    public void LessEnemy(int n)
     {
-        totalEnemy -= m;
+        totalEnemy -= n;
         if (totalEnemy <= 0)
         {
-            uiManager.End(true);
+            GameManager.instance.EndGame(true);
         }
     }
 }

@@ -578,7 +578,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a75b12ce10d38a248beb34e667404f4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: []
+  spawn:
+  - {fileID: 637245045}
+  - {fileID: 270445162}
+  - {fileID: 1755145614}
   Melee: {fileID: 1762836818851396, guid: 3b7880bb4ba7d534d804a63e44f2b07f, type: 2}
   Distancia: {fileID: 1325751348876070, guid: e4d29cdee2f99334d86dd6bcd03bc82a, type: 2}
   Teletransportador: {fileID: 1834245347082256, guid: 356d951b67b783f4a93f7a31377dae88,
@@ -593,8 +596,8 @@ MonoBehaviour:
     invocador: 0
     inhibidor: 0
     escudo: 0
-    tiempo: 50
-    municion: 0
+    tiempo: 1000
+    municion: 10
 --- !u!114 &97006074
 MonoBehaviour:
   m_ObjectHideFlags: 0
