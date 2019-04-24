@@ -387,7 +387,7 @@ MonoBehaviour:
   summoningEnemy: {fileID: 114863355484070790, guid: 3b7880bb4ba7d534d804a63e44f2b07f,
     type: 2}
   averageWalk: 6
-  summoningRate: 3
+  summoningRate: 5
 --- !u!114 &114594615773299180
 MonoBehaviour:
   m_ObjectHideFlags: 1

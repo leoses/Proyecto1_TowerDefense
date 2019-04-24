@@ -66,7 +66,7 @@ public class Health : MonoBehaviour
                 GameManager.instance.GanaDinero(money);
 
                 // Llamamos al wave manager para que reste uno a los enemigos que quedan
-                WaveManager.instance.LessEnemy();
+                WaveManager.instance.LessEnemy(1);
 
                 if (inh != null)
                 {

@@ -12,6 +12,9 @@ public class FollowTarget : MonoBehaviour {
     {
         //Se sitúa la cámara donde el objetivo al empezar la ejecución (-10z para mantener distancia en el eje correspondiente)
         transform.position = new Vector3(target.position.x, target.position.y, -10);
+
+        //Siempre se inicia el nivel con tiempo a velocidad 1
+        Time.timeScale = 1;
     }
 
     void FixedUpdate()
