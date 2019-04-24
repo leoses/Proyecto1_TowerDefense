@@ -180,18 +180,16 @@ public class WaveManager : MonoBehaviour
         {
             totalEnemy = totalEnemy + oleada[i].melee + oleada[i].distancia + oleada[i].inhibidor + oleada[i].invocador + oleada[i].teletransportador + oleada[i].escudo;
         }
-
     }
+
     //Cuando un enemigo muere, resta uno del total,
     //cuando no quedan enemigos se acaba la partida
-    public void LessEnemy()
+    public void LessEnemy(int m)
     {
-        totalEnemy--;
+        totalEnemy -= m;
         if (totalEnemy <= 0)
         {
             uiManager.End(true);
         }
     }
-
-
 }

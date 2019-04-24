@@ -47,6 +47,7 @@ public class Summoner : MonoBehaviour
         source.Play();
         Enemy newEnemy = Instantiate(summoningEnemy, transform.position, transform.rotation);
         newEnemy.NewDir(dir);
+        WaveManager.instance.LessEnemy(-1);
     }
 
     public void Stop()
