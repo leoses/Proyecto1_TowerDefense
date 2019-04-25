@@ -26,7 +26,6 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         transform.Translate(dir * speed * Time.deltaTime);
-
     }
 
     //Método para parar al enemigo cuando detecta que el jugador o el núcleo están dentro de su área de ataque 
