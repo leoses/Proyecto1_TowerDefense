@@ -40,6 +40,7 @@ public class BarricadePlacing : MonoBehaviour
         if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && !built && GameManager.instance.RetMoney() >= cost) //Si se está a rango y se tiene dinero
         {
             //Se crea la barricada en la dirección dada
+            built = true; //Ya hay una barricada construida en esta pared
             Instantiate(barPref, transform.position, Quaternion.Euler(0, 0, angle), transform);
             GameManager.instance.GanaDinero(-cost);
             source.clip = sound;

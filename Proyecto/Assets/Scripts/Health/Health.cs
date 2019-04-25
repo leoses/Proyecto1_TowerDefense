@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     AudioSource source;
 
     Inhibitor inh;
-    private Enemy enemy;
+    Enemy enemy;
     public Healing heal;
     public int health;
     public int money;
@@ -49,6 +49,7 @@ public class Health : MonoBehaviour
             if (gameObject.CompareTag("Barricade"))
             {
                 transform.Translate(200, 200, 0);
+                transform.parent.parent.gameObject.GetComponent<BarricadePlacing>().Destroyed();
                 source.clip = barricadeDestr;
                 source.Play();
                 Destroy(gameObject, 0.1f);
