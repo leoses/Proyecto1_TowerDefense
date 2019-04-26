@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         uiManager.End(win);
-        music.PlayMusic(win);
+        //music.PlayMusic(win);
     }
 
     // metodo que cambia de escena en el juego

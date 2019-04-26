@@ -21,6 +21,7 @@ public class Health : MonoBehaviour
     public int dropProb;
     public float hurtTime;
     float time = 0;
+    bool dead = false;
     Animator sprite;
 
     private void Start()
@@ -55,7 +56,7 @@ public class Health : MonoBehaviour
                 Destroy(gameObject, 0.1f);
             }
 
-            //Sino es enemigo
+            //Si no, es enemigo
             else
             {
                 sprite.SetBool("IsDead", true);
@@ -67,14 +68,17 @@ public class Health : MonoBehaviour
                 GameManager.instance.GanaDinero(money);
 
                 // Llamamos al wave manager para que reste uno a los enemigos que quedan
-                WaveManager.instance.LessEnemy(1);
+                if (!dead)
+                {
+                    WaveManager.instance.LessEnemy(1);
+                    dead = true;
+                }
 
                 if (inh != null)
                 {
                     inh.Reactivate();
                 }
                 Destroy(this.gameObject, 0.5f);
-
             }
         }
 

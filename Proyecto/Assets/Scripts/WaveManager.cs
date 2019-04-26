@@ -77,7 +77,7 @@ public class WaveManager : MonoBehaviour
         foreach (int elem in cont) cont[elem] = 0;
 
         // contamos los enemigos totales
-        CountEnemy();
+        Invoke("CountEnemy", 0.01f);
     }
 
     void Update()
@@ -158,6 +158,7 @@ public class WaveManager : MonoBehaviour
     public void CountEnemy()
     {
         totalEnemy = 0;
+
         for (int i = 0; i < oleada.Length; i++)
         {
             totalEnemy = totalEnemy + oleada[i].melee + oleada[i].distancia + oleada[i].inhibidor + oleada[i].invocador + oleada[i].teletransportador + oleada[i].escudo;

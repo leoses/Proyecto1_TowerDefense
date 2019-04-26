@@ -590,22 +590,30 @@ MonoBehaviour:
   Inhibidor: {fileID: 1993969115435252, guid: 8fecf2fd146395946aa6c2a27ecba86d, type: 2}
   Escudo: {fileID: 1365132804840682, guid: b918afb80b0a9f142becd61882a018fe, type: 2}
   oleada:
-  - melee: 5
-    distancia: 0
+  - melee: 7
+    distancia: 3
     teletransportador: 0
     invocador: 0
     inhibidor: 0
     escudo: 0
-    tiempo: 1000
-    municion: 0
-  - melee: 2
-    distancia: 1
+    tiempo: 22
+    municion: 5
+  - melee: 10
+    distancia: 5
     teletransportador: 1
     invocador: 1
     inhibidor: 1
     escudo: 1
-    tiempo: 35
-    municion: 0
+    tiempo: 40
+    municion: 5
+  - melee: 13
+    distancia: 7
+    teletransportador: 2
+    invocador: 2
+    inhibidor: 2
+    escudo: 2
+    tiempo: 60
+    municion: 5
 --- !u!114 &97006074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,6 +905,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114555501691309322, guid: 3ffc5e0623748f54c84120391adf9558, type: 2}
+    - {fileID: 61039436981451266, guid: 3ffc5e0623748f54c84120391adf9558, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 3ffc5e0623748f54c84120391adf9558, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &212283129 stripped
