@@ -58,7 +58,7 @@ public class WaveManager : MonoBehaviour
             Destroy(this.gameObject);
     }
 
-    //Variable que contiene la referencia al uiManager
+    /*//Variable que contiene la referencia al uiManager
     static UIManager uiManager;
 
 
@@ -66,7 +66,7 @@ public class WaveManager : MonoBehaviour
     public void SetUIManager(UIManager newUI)
     {
         uiManager = newUI;
-    }
+    }*/
 
     void Start()
     {

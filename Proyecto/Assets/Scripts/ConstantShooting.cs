@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class constatshoot : MonoBehaviour {
+public class ConstantShooting : MonoBehaviour {
     public AudioClip sound;
     AudioSource source;
 
     //Disparo de la pistola
     public int damage;
-    float tiempo;
     public float cadencia =1;
     public Bullet bala;
     private GameObject pool;
@@ -21,7 +20,6 @@ public class constatshoot : MonoBehaviour {
         
         source = gameObject.GetComponentInParent<AudioSource>();
         pool = GameObject.FindGameObjectWithTag("bulletpool");
-        tiempo = cadencia;
         animator = this.transform.parent.GetComponentInChildren<Animator>();
         //InvokeRepeating("Shooting", 0, n);
         
