@@ -42,10 +42,13 @@ private void Update()
     /*/
         void Update()
         {
-            point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.farClipPlane));
-            Vector2 ang = new Vector2(point.x - transform.position.x, point.y - transform.position.y);
-            float newang = Mathf.Rad2Deg * Mathf.Atan2(ang.y, ang.x);
-            transform.rotation = Quaternion.Euler(0, 0, newang + 90);
+            if (Time.timeScale > 0)
+            {
+                point = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.farClipPlane));
+                Vector2 ang = new Vector2(point.x - transform.position.x, point.y - transform.position.y);
+                float newang = Mathf.Rad2Deg * Mathf.Atan2(ang.y, ang.x);
+                transform.rotation = Quaternion.Euler(0, 0, newang + 90);
+            }
         }
         //*/
 }

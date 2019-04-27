@@ -30,7 +30,7 @@ public class ConstantShooting : MonoBehaviour {
 	void Update ()
     {
         //while(Input.GetMouseButtonDown(0) && )
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Time.timeScale > 0)
         {
             n = cadencia;
             InvokeRepeating("Shooting", 0, n);

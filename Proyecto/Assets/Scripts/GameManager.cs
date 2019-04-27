@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    bool debug = false;
 
     public static GameManager instance = null;
     Music music;
@@ -83,27 +84,35 @@ public class GameManager : MonoBehaviour
     //reduce la vida del jugador y llama al uiManager para reducir la barra de vida del jugador del HUD
     public void PierdeVidaJugador(float daño)
     {
-        vidaJugador -= daño;
-        uiManager.Damage(vidaJugador, uiManager.healthBar, vidaMax, true);
-
-        //si la vida es menor o igual a 0 el jugador respawnea y la vida y la propia barra se ponen al máximo
-        if (vidaJugador <= 0)
+        //Si no se está en el modo debug
+        if (!debug)
         {
-            player.PlayerRespawn();
-            Penalización();
-            vidaJugador = vidaMax;
-            uiManager.healthBar.fillAmount = 1;
+            vidaJugador -= daño;
+            uiManager.Damage(vidaJugador, uiManager.healthBar, vidaMax, true);
+
+            //si la vida es menor o igual a 0 el jugador respawnea y la vida y la propia barra se ponen al máximo
+            if (vidaJugador <= 0)
+            {
+                player.PlayerRespawn();
+                Penalización();
+                vidaJugador = vidaMax;
+                uiManager.healthBar.fillAmount = 1;
+            }
         }
     }
 
     //reduce la vida del núcleo y llama al uiManager para reducir la barra de vida del núcleo del HUD
     public void PierdeVidaNucleo(int daño)
     {
-        vidaNucleo -= daño;
-        uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax, false);
-        //si la vida del núcleo es menor o igual a 0 entonces termina el juego.
-        if (vidaNucleo <= 0)
-            EndGame(false);
+        if (!debug)
+        {
+            vidaNucleo -= daño;
+            uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax, false);
+
+            //Si la vida del núcleo es menor o igual a 0 entonces termina el juego.
+            if (vidaNucleo <= 0)
+                EndGame(false);
+        }
     }
 
     public void CambiaMunicion(int cant)
@@ -141,10 +150,19 @@ public class GameManager : MonoBehaviour
         uiManager.Oleada(oleada, tiempo, totaloleada, tiempoact);
     }
 
+    //Devuelve el dinero que tiene el jugador
     public int RetMoney()
     {
         return (dinero);
     }
 
-    
+    //Se invoca cuando se cambia el valor de una caja. Activa/desactiva el modo debug
+    public void TurnDebug()
+    {
+        if (debug)
+            debug = false;
+
+        else
+            debug = true;
+    }
 }

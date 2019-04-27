@@ -374,8 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 87e6de05e1f538c44b2f7d3fd1a93097, type: 3}
-  seconds: 2
-  damage: 25
+  seconds: 1.25
+  damage: 10
 --- !u!114 &114863355484070790
 MonoBehaviour:
   m_ObjectHideFlags: 1
