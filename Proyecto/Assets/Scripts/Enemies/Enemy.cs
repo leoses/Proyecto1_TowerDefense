@@ -13,10 +13,10 @@ public class Enemy : MonoBehaviour
     Vector2 prevDir;
     PlayerNexusDetection detectionArea;
     Summoner sum;
-    private Animator sprite;
+    Animator sprite;
 
     //Por defecto, los enemigos comenzarán a moverse hacia la derecha del eje x
-    private void Start()
+    void Start()
     {
         sum = gameObject.GetComponent<Summoner>();
         detectionArea = gameObject.GetComponentInChildren<PlayerNexusDetection>();
@@ -56,6 +56,10 @@ public class Enemy : MonoBehaviour
     //Método para cambiar la rotación del area de ataque fisico y la orientación de los sprites de los enemigos
     public void Rotation(Vector2 newdir)
     {
+        //Melees invocados por el distancia (¿Pierden la referencia?)
+        if (detectionArea == null) detectionArea = this.gameObject.GetComponentInChildren<PlayerNexusDetection>();
+        if (sprite == null) sprite = this.gameObject.GetComponentInChildren<Animator>();
+
         //Mismo eje, sentido contrario
         if (dir == -1 * newdir)
         {

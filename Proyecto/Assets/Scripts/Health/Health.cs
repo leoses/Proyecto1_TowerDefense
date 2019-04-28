@@ -61,27 +61,37 @@ public class Health : MonoBehaviour
             {
                 sprite.SetBool("IsDead", true);
                 enemy.enabled = false;
-                if (rnd.Next(1, 101) <= dropProb)
-                    Instantiate(heal, transform.position, Quaternion.identity);
+                
 
-                // llamamos al gameManager para que sume dinero
-                GameManager.instance.GanaDinero(money);
+                
 
-                // Llamamos al wave manager para que reste uno a los enemigos que quedan
+                
                 if (!dead)
                 {
+                    // Llamamos al wave manager para que reste uno a los enemigos que quedan
                     WaveManager.instance.LessEnemy(1);
+
+                    // llamamos al gameManager para que sume dinero
+                    GameManager.instance.GanaDinero(money);
+
+                    //Se elige aleatoriamente si se droppea un botiquín
+                    if (rnd.Next(1, 101) <= dropProb)
+                        Instantiate(heal, transform.position, Quaternion.identity);
+
                     dead = true;
                 }
 
+                //Si es un inhibidor se reactiva la torreta
                 if (inh != null)
                 {
                     inh.Reactivate();
                 }
+
                 Destroy(this.gameObject, 0.5f);
             }
         }
 
+        //Si no se ha producido un sonido en x tiempo y el objeto recibe daño, reproduce una pista
         else if (time >= hurtTime)
         {
             switch (rnd.Next(1, 4))
@@ -101,5 +111,11 @@ public class Health : MonoBehaviour
             source.Play();
             time = 0;
         }
+    }
+
+    //Los enemigos invocados no dan dinero
+    public void Summoned()
+    {
+        money = 0;
     }
 }

@@ -720,13 +720,13 @@ MonoBehaviour:
   Inhibidor: {fileID: 1993969115435252, guid: 8fecf2fd146395946aa6c2a27ecba86d, type: 2}
   Escudo: {fileID: 1365132804840682, guid: b918afb80b0a9f142becd61882a018fe, type: 2}
   oleada:
-  - melee: 10
-    distancia: 2
-    teletransportador: 1
-    invocador: 2
-    inhibidor: 1
+  - melee: 0
+    distancia: 0
+    teletransportador: 0
+    invocador: 3
+    inhibidor: 0
     escudo: 0
-    tiempo: 40
+    tiempo: 1000
     municion: 5
   - melee: 15
     distancia: 5
@@ -1617,7 +1617,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4587893224678098, guid: 3ffc5e0623748f54c84120391adf9558, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4587893224678098, guid: 3ffc5e0623748f54c84120391adf9558, type: 2}
       propertyPath: m_LocalScale.x
@@ -2595,7 +2595,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392444804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30, y: 9, z: -0.1}
+  m_LocalPosition: {x: 18.51, y: 39.9, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 148377763}
@@ -61949,7 +61949,7 @@ Transform:
   - {fileID: 1397941041}
   - {fileID: 162112046}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1370827202
 Prefab:

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4794720083005836}
   - component: {fileID: 60125444808786640}
   - component: {fileID: 114594615773299180}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: PlayerDetectionArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,8 +386,9 @@ MonoBehaviour:
   sound: {fileID: 8300000, guid: e1bf59d9c9534984f8e3f286a93b4bc4, type: 3}
   summoningEnemy: {fileID: 114863355484070790, guid: 3b7880bb4ba7d534d804a63e44f2b07f,
     type: 2}
-  averageWalk: 6
-  summoningRate: 5
+  walkTime: 6.5
+  summoningRate: 1.5
+  summons: 4
 --- !u!114 &114594615773299180
 MonoBehaviour:
   m_ObjectHideFlags: 1

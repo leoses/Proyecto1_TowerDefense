@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerNexusDetection : MonoBehaviour
 {
-
     Enemy enemigo;
     Ghost ghost;
     PlayerMovement player;
     DistanceShooting distanceEnemy;
     bool bandera = true;
     bool chase = false;
+
     private void Start()
     {
         ghost = gameObject.GetComponentInParent<Ghost>();
