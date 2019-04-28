@@ -15,6 +15,9 @@ public class TurretArea : MonoBehaviour
     Plane plane;
     Vector3 distanceFromCamera;
 
+    Vector3[] usedTiles = new Vector3[100]; //Lista de posiciones en las que ya se ha construido una torreta
+    int ind = 0;
+
     int segments = 40;
     float xradius = GameManager.playerRange; //El área de construcción tiene los radios dados en el Game Manager
     float yradius = GameManager.playerRange;
@@ -43,8 +46,6 @@ public class TurretArea : MonoBehaviour
                 line.positionCount = segments + 1;
                 CreatePoints();
                 done = true;
-
-
             }
 
             else if (done && !Input.GetKey(GameManager.areaKey)) //Si ya está representada y se deja de pulsar el espacio se borra
@@ -53,7 +54,7 @@ public class TurretArea : MonoBehaviour
                 done = false;
             }
 
-            if (Input.GetKey(KeyCode.Mouse1))
+            if (Input.GetKey(KeyCode.Mouse1) && Input.GetKey(GameManager.areaKey))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 float enter = 0f;
@@ -67,16 +68,33 @@ public class TurretArea : MonoBehaviour
                         //Distancia entre posiciones
                         distance = new Vector2(Mathf.Abs(hit.x - transform.position.x), Mathf.Abs(hit.y - transform.position.y));
 
-                        if (Input.GetKey(GameManager.areaKey) && distance.magnitude <= GameManager.playerRange && t > .5 && GameManager.instance.RetMoney() >= cost) //Si se está a rango y se tiene el dinero
+                        if (distance.magnitude <= GameManager.playerRange && t > .5 && GameManager.instance.RetMoney() >= cost) //Si se está a rango y se tiene el dinero
                         {
-                            t = 0;
                             Vector3 poshit = new Vector3(hit.x + 0.5f, hit.y + 0.5f, hit.z - 1);
 
-                            //Se sustituye la pared sin torreta por una pared con torreta
-                            source.clip = sound;
-                            source.Play();
-                            Instantiate(turretPref, poshit, Quaternion.identity);
-                            GameManager.instance.GanaDinero(-cost);
+                            //Se compara poshit con los elementos en el vector que guarda las posiciones usadas
+                            //Si no se ha usado todavía, se construye una torreta
+                            bool used = false;
+                            int i = 0;
+                            while (usedTiles[i] != Vector3.zero)
+                            {
+                                if (usedTiles[i] == poshit)
+                                    used = true;
+
+                                i++;
+                            }
+
+                            if (!used)
+                            {
+                                //Se construye una pared en el tile en cuestión y se añade poshit al vector usedTiles
+                                usedTiles[ind] = poshit;
+                                ind++;
+                                t = 0;
+                                source.clip = sound;
+                                source.Play();
+                                Instantiate(turretPref, poshit, Quaternion.identity);
+                                GameManager.instance.GanaDinero(-cost);
+                            }
                         }
                     }
                 }
