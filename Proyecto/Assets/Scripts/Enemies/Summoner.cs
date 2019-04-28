@@ -34,7 +34,6 @@ public class Summoner : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-
         //Tras caminar x tiempo
         if (time >= walkTime)
         {

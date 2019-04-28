@@ -56,6 +56,10 @@ public class Enemy : MonoBehaviour
     //Método para cambiar la rotación del area de ataque fisico y la orientación de los sprites de los enemigos
     public void Rotation(Vector2 newdir)
     {
+        //Melees invocados por el distancia (¿Pierden la referencia?)
+        if (detectionArea == null) detectionArea = this.gameObject.GetComponentInChildren<PlayerNexusDetection>();
+        if (sprite == null) sprite = this.gameObject.GetComponentInChildren<Animator>();
+
         //Mismo eje, sentido contrario
         if (dir == -1 * newdir)
         {

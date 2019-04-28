@@ -723,7 +723,7 @@ MonoBehaviour:
   - melee: 0
     distancia: 0
     teletransportador: 0
-    invocador: 1
+    invocador: 3
     inhibidor: 0
     escudo: 0
     tiempo: 1000
@@ -1617,7 +1617,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4587893224678098, guid: 3ffc5e0623748f54c84120391adf9558, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4587893224678098, guid: 3ffc5e0623748f54c84120391adf9558, type: 2}
       propertyPath: m_LocalScale.x
@@ -61757,7 +61757,7 @@ Transform:
   - {fileID: 1397941041}
   - {fileID: 162112046}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1370827202
 Prefab:
