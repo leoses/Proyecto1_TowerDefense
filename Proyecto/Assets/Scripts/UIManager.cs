@@ -14,12 +14,12 @@ public class UIManager : MonoBehaviour
     public Text EndGameText;
     public Image healthBar;
     public Image nexusBar;
-    //public GameObject damageSignal;
+    public GameObject damageSignal;
     public GameObject pausePanel;
     public GameObject EndGame;
     public Button ReplayButton, NextLevelButton;
     bool active = false;
-    //Animator receivesDamage;
+    Animator receivesDamage;
 
     //En el start hacemos saber al GameManager que este componente es el encargado de
     //actualizar la interfaz
@@ -29,8 +29,8 @@ public class UIManager : MonoBehaviour
         //WaveManager.instance.SetUIManager(this);
         ReplayButton.gameObject.SetActive(false);
         NextLevelButton.gameObject.SetActive(false);
-        ////damageSignal.gameObject.SetActive(false);
-        //receivesDamage = damageSignal.GetComponentInChildren<Animator>();
+        //damageSignal.gameObject.SetActive(false);
+        receivesDamage = damageSignal.GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -71,12 +71,17 @@ public class UIManager : MonoBehaviour
     public void Damage(float Health, Image bar, float maxHealth, bool player)
     {
         bar.fillAmount = Health / maxHealth;
-        //if (player)
-        //{
-        //    receivesDamage.SetBool("ReceivesDamage", true);
-        //}
+        if (player)
+        {
+            receivesDamage.SetBool("ReceivesDamage", true);
+            Invoke("StopDamage", 2);
+        }
     }
 
+    void StopDamage()
+    {
+        receivesDamage.SetBool("ReceivesDamage", false);
+    }
     // actualiza y muestra la informacion de las oleadas
     public void Oleada(int wave, int time, int totalWaves, int actTime)
     {
