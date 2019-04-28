@@ -932,7 +932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: d378263b3a3008244b13646759ce7786, type: 3}
   damage: 50
-  cadencia: 0.5
+  cadencia: 0.25
   bala: {fileID: 114988581333576926, guid: c056cae84658e194abd1e61ac2d80e73, type: 2}
 --- !u!1001 &212283128
 Prefab:

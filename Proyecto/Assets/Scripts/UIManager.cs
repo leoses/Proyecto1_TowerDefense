@@ -29,7 +29,6 @@ public class UIManager : MonoBehaviour
         //WaveManager.instance.SetUIManager(this);
         ReplayButton.gameObject.SetActive(false);
         NextLevelButton.gameObject.SetActive(false);
-        //damageSignal.gameObject.SetActive(false);
         receivesDamage = damageSignal.GetComponentInChildren<Animator>();
     }
 
@@ -68,10 +67,10 @@ public class UIManager : MonoBehaviour
     }
 
     //Reduce proporcionalmente la barra de vida del jugador y/o del nucleo respecto de la vida restante.
-    public void Damage(float Health, Image bar, float maxHealth, bool player)
+    public void Damage(float Health, Image bar, float maxHealth, bool player, bool healing)
     {
         bar.fillAmount = Health / maxHealth;
-        if (player)
+        if (player && !healing) //Siempre que se trate de la vida del jugador y que no sea por coger un botiquín
         {
             receivesDamage.SetBool("ReceivesDamage", true);
             Invoke("StopDamage", 2);
@@ -82,6 +81,7 @@ public class UIManager : MonoBehaviour
     {
         receivesDamage.SetBool("ReceivesDamage", false);
     }
+
     // actualiza y muestra la informacion de las oleadas
     public void Oleada(int wave, int time, int totalWaves, int actTime)
     {

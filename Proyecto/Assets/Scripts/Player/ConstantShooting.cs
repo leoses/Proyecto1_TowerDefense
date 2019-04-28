@@ -8,7 +8,7 @@ public class ConstantShooting : MonoBehaviour {
 
     //Disparo de la pistola
     public int damage;
-    public float cadencia =1;
+    public float cadencia = 1;
     public Bullet bala;
     private GameObject pool;
     private Animator animator;

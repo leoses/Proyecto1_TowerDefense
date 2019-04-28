@@ -82,13 +82,13 @@ public class GameManager : MonoBehaviour
     }
 
     //reduce la vida del jugador y llama al uiManager para reducir la barra de vida del jugador del HUD
-    public void PierdeVidaJugador(float daño)
+    public void PierdeVidaJugador(float daño, bool healing)
     {
         //Si no se está en el modo debug
         if (!debug)
         {
             vidaJugador -= daño;
-            uiManager.Damage(vidaJugador, uiManager.healthBar, vidaMax, true);
+            uiManager.Damage(vidaJugador, uiManager.healthBar, vidaMax, true, healing);
 
             //si la vida es menor o igual a 0 el jugador respawnea y la vida y la propia barra se ponen al máximo
             if (vidaJugador <= 0)
@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         if (!debug)
         {
             vidaNucleo -= daño;
-            uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax, false);
+            uiManager.Damage(vidaNucleo, uiManager.nexusBar, vidaNucleoMax, false, false);
 
             //Si la vida del núcleo es menor o igual a 0 entonces termina el juego.
             if (vidaNucleo <= 0)

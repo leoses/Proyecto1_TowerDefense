@@ -45,7 +45,7 @@ public class PhysicalAttack : MonoBehaviour {
 
                 if (player.gameObject == collision.gameObject)
                 {
-                    GameManager.instance.PierdeVidaJugador(damage);
+                    GameManager.instance.PierdeVidaJugador(damage, false);
                 }
 
                 else
