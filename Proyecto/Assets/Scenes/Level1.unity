@@ -762,7 +762,7 @@ MonoBehaviour:
   EndGameText: {fileID: 2022974267}
   healthBar: {fileID: 1835246026}
   nexusBar: {fileID: 850315880}
-  damageSignal: {fileID: 0}
+  damageSignal: {fileID: 440349388}
   pausePanel: {fileID: 384827394}
   EndGame: {fileID: 725150629}
   ReplayButton: {fileID: 1941101472}
