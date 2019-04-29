@@ -23,7 +23,7 @@ public class TurretArea : MonoBehaviour
     float yradius = GameManager.playerRange;
     LineRenderer line;
     bool done = false; //¿Se ha representado ya el área?
-    float t; //Una variable para que el metodo de oner torretas no ponga muchas de una sola vez
+    float t = 0; //Una variable para que el metodo de oner torretas no ponga muchas de una sola vez
 
     void Start()
     {

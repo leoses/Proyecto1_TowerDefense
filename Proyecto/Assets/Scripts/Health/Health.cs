@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     public AudioClip barricadeDestr;
     AudioSource source;
 
+    BarricadePlacing barPlace;
     Inhibitor inh;
     Enemy enemy;
     public Healing heal;
@@ -50,7 +51,7 @@ public class Health : MonoBehaviour
             if (gameObject.CompareTag("Barricade"))
             {
                 transform.Translate(200, 200, 0);
-                transform.parent.parent.gameObject.GetComponent<BarricadePlacing>().Destroyed();
+                barPlace.Destroyed(transform.parent.position);
                 source.clip = barricadeDestr;
                 source.Play();
                 Destroy(gameObject, 0.1f);
@@ -61,10 +62,6 @@ public class Health : MonoBehaviour
             {
                 sprite.SetBool("IsDead", true);
                 enemy.enabled = false;
-                
-
-                
-
                 
                 if (!dead)
                 {
@@ -117,5 +114,10 @@ public class Health : MonoBehaviour
     public void Summoned()
     {
         money = 0;
+    }
+
+    public void Created(BarricadePlacing bar)
+    {
+        barPlace = bar;
     }
 }
