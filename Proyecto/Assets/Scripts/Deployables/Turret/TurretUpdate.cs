@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 struct Update
@@ -24,12 +25,15 @@ public class TurretUpdate : MonoBehaviour
     int level = 1;
     Transform player;
     Vector2 distance;
+    SpriteRenderer UImagen;
+    public Sprite n1, n2;
 
     private void Start()
     {
         source = gameObject.GetComponent<AudioSource>();
         //Se busca el transform del jugador usando el tag
         player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        UImagen = this.gameObject.GetComponent<SpriteRenderer>();
     }
 
     //Al hacer click en este objeto
@@ -48,6 +52,7 @@ public class TurretUpdate : MonoBehaviour
                     gameObject.GetComponent<TurretShooting>().TurretUpgrade(first.damage, first.fireRate);
                     GameManager.instance.GanaDinero(-first.cost);
                     level++;
+                    UImagen.sprite = n1;
                 }
                 break;
 
@@ -57,6 +62,7 @@ public class TurretUpdate : MonoBehaviour
                     gameObject.GetComponent<TurretShooting>().TurretUpgrade(second.damage, second.fireRate);
                     GameManager.instance.GanaDinero(-second.cost);
                     level++;
+                    UImagen.sprite = n2;
                 }
                 break;
         }
