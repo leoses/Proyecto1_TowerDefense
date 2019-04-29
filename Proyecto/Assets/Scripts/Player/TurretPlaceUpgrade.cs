@@ -2,20 +2,36 @@
 using System.Collections;
 using UnityEngine.Tilemaps;
 
-public class TurretArea : MonoBehaviour
+public class TurretPlaceUpgrade : MonoBehaviour
 {
-    public AudioClip sound;
+    [System.Serializable]
+    struct Upgrade
+    {
+        public int cost;
+        public int damage;
+        public float fireRate;
+    }
+
+    [SerializeField]
+    Upgrade first;
+
+    [SerializeField]
+    Upgrade second;
+
+    public AudioClip placingSound;
+    public AudioClip upgradeSound;
     AudioSource source;
+    public Sprite n1, n2;
 
     public Tilemap tilemap;
-    public int cost = 150;
+    public int costPlacement = 150;
+    public int costUpgrade = 150;
     public GameObject turretPref;
-    Transform player;
     Vector2 distance;
     Plane plane;
     Vector3 distanceFromCamera;
 
-    Vector3[] usedTiles = new Vector3[100]; //Lista de posiciones en las que ya se ha construido una torreta
+    GameObject[] placedTurrets = new GameObject[100]; //Lista de posiciones en las que ya se ha construido una torreta
     int ind = 0;
 
     int segments = 40;
@@ -68,7 +84,7 @@ public class TurretArea : MonoBehaviour
                         //Distancia entre posiciones
                         distance = new Vector2(Mathf.Abs(hit.x - transform.position.x), Mathf.Abs(hit.y - transform.position.y));
 
-                        if (distance.magnitude <= GameManager.playerRange && t > .5 && GameManager.instance.RetMoney() >= cost) //Si se está a rango y se tiene el dinero
+                        if (distance.magnitude <= GameManager.playerRange && t > .5) //Si se está a rango
                         {
                             Vector3 poshit = new Vector3(hit.x + 0.5f, hit.y + 0.5f, hit.z - 1);
 
@@ -76,24 +92,54 @@ public class TurretArea : MonoBehaviour
                             //Si no se ha usado todavía, se construye una torreta
                             bool used = false;
                             int i = 0;
-                            while (usedTiles[i] != Vector3.zero)
+                            while (!used && placedTurrets[i] != null && placedTurrets[i].transform.position != Vector3.zero)
                             {
-                                if (usedTiles[i] == poshit)
+                                if (placedTurrets[i].transform.position == poshit)
                                     used = true;
 
-                                i++;
+                                else
+                                    i++;
                             }
 
-                            if (!used)
+                            if (!used && GameManager.instance.RetMoney() >= costPlacement)
                             {
                                 //Se construye una pared en el tile en cuestión y se añade poshit al vector usedTiles
-                                usedTiles[ind] = poshit;
-                                ind++;
                                 t = 0;
-                                source.clip = sound;
+                                placedTurrets[ind] = Instantiate(turretPref, poshit, Quaternion.identity);
+                                ind++;
+                                source.clip = placingSound;
                                 source.Play();
-                                Instantiate(turretPref, poshit, Quaternion.identity);
-                                GameManager.instance.GanaDinero(-cost);
+                                GameManager.instance.GanaDinero(-costPlacement);
+                            }
+
+                            else
+                            {
+                                int level = placedTurrets[i].GetComponent<TurretShooting>().RetLevel();
+                                switch (level)
+                                {
+                                    case 1:
+                                        //Si se tiene dinero, se está a rango y no está a nivel máximo
+                                        if (GameManager.instance.RetMoney() >= first.cost && level < 3)
+                                        {
+                                            placedTurrets[i].GetComponent<TurretShooting>().TurretUpgrade(first.damage, first.fireRate);
+                                            GameManager.instance.GanaDinero(-first.cost);
+                                            placedTurrets[i].GetComponent<SpriteRenderer>().sprite = n1;
+                                        }
+                                        break;
+
+                                    case 2:
+                                        if (GameManager.instance.RetMoney() >= second.cost && level < 3)
+                                        {
+                                            placedTurrets[i].GetComponent<TurretShooting>().TurretUpgrade(second.damage, second.fireRate);
+                                            GameManager.instance.GanaDinero(-second.cost);
+                                            placedTurrets[i].GetComponent<SpriteRenderer>().sprite = n2;
+                                        }
+                                        break;
+                                }
+
+                                t = 0;
+                                source.clip = upgradeSound;
+                                source.Play();
                             }
                         }
                     }

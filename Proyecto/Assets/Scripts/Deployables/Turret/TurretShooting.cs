@@ -15,6 +15,7 @@ public class TurretShooting : MonoBehaviour {
     public float fireRate = 1;
     public int damage = 35;
     bool disabled = false;
+    int level = 1;
 
     private void Start()
     {
@@ -60,6 +61,7 @@ public class TurretShooting : MonoBehaviour {
     //Método que cambia los valores de la torreta
     public void TurretUpgrade(int impDam, float impRate)
     {
+        level++;
         damage = impDam;
         fireRate = impRate;
     }
@@ -78,5 +80,10 @@ public class TurretShooting : MonoBehaviour {
     public bool RetState()
     {
         return (disabled);
+    }
+
+    public int RetLevel()
+    {
+        return (level);
     }
 }
