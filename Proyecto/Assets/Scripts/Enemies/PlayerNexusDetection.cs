@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerNexusDetection : MonoBehaviour
 {
-    Enemy enemigo;
+    Enemy enemy;
     Ghost ghost;
     PlayerMovement player;
     DistanceShooting distanceEnemy;
@@ -14,7 +14,7 @@ public class PlayerNexusDetection : MonoBehaviour
     private void Start()
     {
         ghost = gameObject.GetComponentInParent<Ghost>();
-        enemigo = gameObject.GetComponentInParent<Enemy>();
+        enemy = gameObject.GetComponentInParent<Enemy>();
         distanceEnemy = gameObject.GetComponentInChildren<DistanceShooting>();
     }
 
@@ -30,7 +30,7 @@ public class PlayerNexusDetection : MonoBehaviour
 
         else
         {
-            enemigo.StopEnemy();
+            enemy.StopEnemy(collision.CompareTag("Nexus"));
             if (distanceEnemy != null && bandera)
             {
                 distanceEnemy.ChangeBool(true);
@@ -44,7 +44,7 @@ public class PlayerNexusDetection : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (!chase)
-            enemigo.NewDir(Vector2.zero);
+            enemy.NewDir(Vector2.zero);
     }
 
     //Método para cambiar la rotación del area del ataque físico

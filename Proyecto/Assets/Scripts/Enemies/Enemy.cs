@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     PlayerNexusDetection detectionArea;
     Summoner sum;
     Animator sprite;
+    bool summoning = false;
 
     //Por defecto, los enemigos comenzarán a moverse hacia la derecha del eje x
     void Start()
@@ -25,20 +26,21 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(dir * speed * Time.deltaTime);
+        if (!summoning)
+            transform.Translate(dir * speed * Time.deltaTime);
     }
 
     //Método para parar al enemigo cuando detecta que el jugador o el núcleo están dentro de su área de ataque 
     //y guardar la dirección que llevaba
-    public void StopEnemy()
+    public void StopEnemy(bool nexus)
     {
         prevDir = dir;
         dir = Vector2.zero;
 
-        if (sum != null)
+        if (sum != null && nexus)
             sum.Stop();
-        sprite.SetBool("Idle", true);
 
+        sprite.SetBool("Idle", true);
     }
 
     //Método para devolverle al enemigo la velocidad que llevaba antes de detenerse por detectar al jugador
@@ -105,5 +107,14 @@ public class Enemy : MonoBehaviour
 
         else
             return (dir);
+    }
+
+    public void ToggleSummon()
+    {
+        if (summoning)
+            summoning = false;
+
+        else
+            summoning = true;
     }
 }

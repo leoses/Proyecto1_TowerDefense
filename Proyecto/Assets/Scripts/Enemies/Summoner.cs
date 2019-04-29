@@ -44,7 +44,7 @@ public class Summoner : MonoBehaviour
             {
                 sprite.SetBool("StartSummoning", true);
                 dir = summoner.PassDir();
-                summoner.enabled = false;
+                summoner.ToggleSummon();
                 stopped = true;
             }
 
@@ -61,29 +61,13 @@ public class Summoner : MonoBehaviour
             {
                 time = 0;
                 timesDone = 0;
-                sprite.SetBool("StartSummoning", false); //<--------------------------------
-                summoner.enabled = true;
-                summoner.NewDir(dir);
+                sprite.SetBool("StartSummoning", false);
+                summoner.ToggleSummon();
+                //summoner.NewDir(dir);
                 stopped = false;
             }
         }
     }
-
-    /*private void Update()
-    {
-        if (!stopped)
-        {
-            time += Time.deltaTime;
-            if (time > limit)
-            {
-                sprite.SetBool("StartSummoning", true);
-                dir = summoner.PassDir();
-                summoner.enabled = false;
-                stopped = true;
-                InvokeRepeating("Summon", 1, summoningRate);
-            }
-        }
-    }*/
 
     //Se reproduce un sonido, se crea el prefab de la invocación y se cambian los valores pertinentes
     void Summon()
