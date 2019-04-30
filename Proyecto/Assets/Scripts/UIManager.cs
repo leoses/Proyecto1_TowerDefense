@@ -14,10 +14,11 @@ public class UIManager : MonoBehaviour
     public Text EndGameText;
     public Image healthBar;
     public Image nexusBar;
+    public Image controls;
     public GameObject damageSignal;
     public GameObject pausePanel;
     public GameObject EndGame;
-    public Button ReplayButton, NextLevelButton;
+    public Button ReplayButton, NextLevelButton, ReturnPauseButton;
     bool active = false;
     Animator receivesDamage;
 
@@ -30,6 +31,8 @@ public class UIManager : MonoBehaviour
         ReplayButton.gameObject.SetActive(false);
         NextLevelButton.gameObject.SetActive(false);
         receivesDamage = damageSignal.GetComponentInChildren<Animator>();
+        controls.gameObject.SetActive(false);
+        ReturnPauseButton.gameObject.SetActive(false);
     }
 
     void Update()
@@ -120,5 +123,17 @@ public class UIManager : MonoBehaviour
     {
         active = false;
         pausePanel.SetActive(false);
+    }
+
+    public void ActiveControls()
+    {
+        controls.gameObject.SetActive(true);
+        ReturnPauseButton.gameObject.SetActive(true);
+    }
+
+    public void QuitControls()
+    {
+        controls.gameObject.SetActive(false);
+        ReturnPauseButton.gameObject.SetActive(false);
     }
 }
