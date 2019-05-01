@@ -26,7 +26,7 @@ public class BalaEscopeta : MonoBehaviour
         Shield shield = collision.gameObject.GetComponent<Shield>();
 
         //Si el gameObject con el que "colisionan" tiene salud, le causa daño a no ser que sea o el Escudo o el nexo
-        if (enemigo != null && shield == null)
+        if (enemigo != null)
             enemigo.RecieveDamage(damage);
 
         else    //En caso contrario, la bala se destruirá

@@ -588,14 +588,14 @@ MonoBehaviour:
     type: 2}
   Invocador: {fileID: 1448842850953592, guid: fce9ee0853285f846aef776686142dd3, type: 2}
   Inhibidor: {fileID: 1993969115435252, guid: 8fecf2fd146395946aa6c2a27ecba86d, type: 2}
-  Escudo: {fileID: 1365132804840682, guid: b918afb80b0a9f142becd61882a018fe, type: 2}
+  Escudo: {fileID: 1330129518568144, guid: 83373fb9bd0886a448911f86a41ed1ec, type: 2}
   oleada:
   - melee: 0
     distancia: 0
     teletransportador: 0
     invocador: 0
     inhibidor: 0
-    escudo: 0
+    escudo: 1
     tiempo: 1000
     municion: 5
   - melee: 10

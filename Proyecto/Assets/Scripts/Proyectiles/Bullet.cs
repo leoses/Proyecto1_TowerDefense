@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
         //Si es así, causamos daño a dicho objeto
         Health damagedObject = collision.gameObject.GetComponent<Health>();
 
-        if (damagedObject != null)
+        if (damagedObject != null && !collision.gameObject.CompareTag("Shield"))
         {
             damagedObject.RecieveDamage(damage);
         }
