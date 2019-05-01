@@ -30,6 +30,7 @@ public class TurretPlaceUpgrade : MonoBehaviour
     Vector2 distance;
     Plane plane;
     Vector3 distanceFromCamera;
+    private float offset = 0.5f;
 
     GameObject[] placedTurrets = new GameObject[100]; //Lista de posiciones en las que ya se ha construido una torreta
     int ind = 0;
@@ -110,6 +111,9 @@ public class TurretPlaceUpgrade : MonoBehaviour
                                 source.clip = placingSound;
                                 source.Play();
                                 GameManager.instance.GanaDinero(-costPlacement);
+
+                                //Feedback Dinero
+                                TextManager.instance.CreateText(new Vector3 (this.transform.position.x, this.transform.position.y + offset, this.transform.position.z), "-" + costPlacement + "$");
                             }
 
                             else
@@ -123,6 +127,8 @@ public class TurretPlaceUpgrade : MonoBehaviour
                                         {
                                             placedTurrets[i].GetComponent<TurretShooting>().TurretUpgrade(first.damage, first.fireRate);
                                             GameManager.instance.GanaDinero(-first.cost);
+                                            //Feedback Dinero
+                                            TextManager.instance.CreateText(new Vector3(this.transform.position.x, this.transform.position.y + offset, this.transform.position.z), "-" + first.cost + "$");
                                             placedTurrets[i].GetComponent<SpriteRenderer>().sprite = n1;
                                         }
                                         break;
@@ -132,6 +138,8 @@ public class TurretPlaceUpgrade : MonoBehaviour
                                         {
                                             placedTurrets[i].GetComponent<TurretShooting>().TurretUpgrade(second.damage, second.fireRate);
                                             GameManager.instance.GanaDinero(-second.cost);
+                                            //Feedback Dinero
+                                            TextManager.instance.CreateText(new Vector3 (this.transform.position.x, this.transform.position.y + offset, this.transform.position.z), "-" + second.cost + "$");
                                             placedTurrets[i].GetComponent<SpriteRenderer>().sprite = n2;
                                         }
                                         break;

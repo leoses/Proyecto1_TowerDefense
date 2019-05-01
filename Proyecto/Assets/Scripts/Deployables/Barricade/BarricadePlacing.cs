@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class BarricadePlacing : MonoBehaviour
 {
     public AudioClip sound;
     AudioSource source;
-
     public Tilemap tilemap;
     public GameObject barPref;
     Vector2 distance;
@@ -16,6 +16,7 @@ public class BarricadePlacing : MonoBehaviour
     public int cost = 50;
     public int angle;
     float t = 0;
+    private float offset = 0.5f;
 
     Vector3[] usedTiles = new Vector3[100]; //Lista de posiciones en las que ya se ha construido una barricada
 
@@ -82,6 +83,11 @@ public class BarricadePlacing : MonoBehaviour
                                 barricade.transform.Rotate(0, 0, angle);
                                 barricade.transform.GetChild(0).gameObject.GetComponent<Health>().Created(this);
                                 GameManager.instance.GanaDinero(-cost);
+
+                                //FeedBack del texto al colocar las barricadas
+                                TextManager.instance.CreateText(new Vector3 (this.transform.position.x, this.transform.position.y + offset, this.transform.position.z), "-" + cost + "$");
+
+
                             }
                         }
                     }
