@@ -1277,8 +1277,8 @@ MonoBehaviour:
     fireRate: 0
   placingSound: {fileID: 0}
   upgradeSound: {fileID: 0}
-  n1: {fileID: 0}
-  n2: {fileID: 0}
+  n1: {fileID: 21300000, guid: be6cf99cb26dbfe42a428c398c86f777, type: 3}
+  n2: {fileID: 21300000, guid: 11cacdfa9f0183642b7e1e8c2705fa57, type: 3}
   tilemap: {fileID: 1476080965}
   costPlacement: 150
   costUpgrade: 150
@@ -1386,8 +1386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
-  feedbackText: {fileID: 114504656097435352, guid: 2ae355503f486ca43a5f6c1ae68dc252,
-    type: 2}
   tilemap: {fileID: 977191247}
   barPref: {fileID: 1019312356884348, guid: 279dbcebb0649df4f8c80caab8e2631a, type: 2}
   cost: 50
@@ -1404,8 +1402,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 0}
-  feedbackText: {fileID: 114504656097435352, guid: 2ae355503f486ca43a5f6c1ae68dc252,
-    type: 2}
   tilemap: {fileID: 1628689506}
   barPref: {fileID: 1019312356884348, guid: 279dbcebb0649df4f8c80caab8e2631a, type: 2}
   cost: 50
@@ -6436,8 +6432,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.03302002, y: 0}
-  m_SizeDelta: {x: 7.389, y: 3.326}
+  m_AnchoredPosition: {x: 12.75, y: 4.303}
+  m_SizeDelta: {x: -245.18, y: -139.447}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &900229421
 MonoBehaviour:
