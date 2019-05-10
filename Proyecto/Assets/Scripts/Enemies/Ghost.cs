@@ -54,7 +54,8 @@ public class Ghost : MonoBehaviour
             source.Play();
             sprite.SetBool("IsDead", true);
             target.transform.position = pos.position;
-            Destroy(gameObject, 1f);
+            Destroy(gameObject);
+            WaveManager.instance.LessEnemy(1);
         }
     }
 }

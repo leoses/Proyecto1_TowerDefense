@@ -88,7 +88,7 @@ public class WaveManager : MonoBehaviour
 
             t = t + Time.deltaTime;
 
-            if (t > 1)
+            if (t > 0.75)
             {
                 int r = rnd.Next(0, 6);
 
@@ -170,7 +170,8 @@ public class WaveManager : MonoBehaviour
     public void LessEnemy(int n)
     {
         totalEnemy -= n;
-        if (totalEnemy <= 0)
+        //Debug.Log(totalEnemy);
+        if (totalEnemy <= 1)
         {
             GameManager.instance.EndGame(true);
         }

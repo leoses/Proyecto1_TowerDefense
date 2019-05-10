@@ -778,30 +778,46 @@ MonoBehaviour:
   Inhibidor: {fileID: 1993969115435252, guid: 8fecf2fd146395946aa6c2a27ecba86d, type: 2}
   Escudo: {fileID: 1330129518568144, guid: 83373fb9bd0886a448911f86a41ed1ec, type: 2}
   oleada:
-  - melee: 5
+  - melee: 15
     distancia: 2
-    teletransportador: 1
-    invocador: 1
+    teletransportador: 0
+    invocador: 0
     inhibidor: 0
-    escudo: 0
+    escudo: 2
     tiempo: 20
     municion: 5
   - melee: 15
-    distancia: 4
+    distancia: 10
+    teletransportador: 1
+    invocador: 0
+    inhibidor: 0
+    escudo: 5
+    tiempo: 30
+    municion: 10
+  - melee: 3
+    distancia: 3
     teletransportador: 3
     invocador: 1
     inhibidor: 2
-    escudo: 2
-    tiempo: 60
+    escudo: 8
+    tiempo: 35
     municion: 10
-  - melee: 20
-    distancia: 5
-    teletransportador: 3
-    invocador: 2
-    inhibidor: 2
-    escudo: 2
-    tiempo: 70
-    municion: 5
+  - melee: 4
+    distancia: 3
+    teletransportador: 1
+    invocador: 3
+    inhibidor: 3
+    escudo: 5
+    tiempo: 50
+    municion: 10
+  - melee: 6
+    distancia: 3
+    teletransportador: 0
+    invocador: 1
+    inhibidor: 10
+    escudo: 3
+    tiempo: 60
+    municion: 15
 --- !u!114 &97006074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6280,7 +6296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.042000003, y: 0.052}
   m_AnchorMax: {x: 0.98800004, y: 0.9241676}
-  m_AnchoredPosition: {x: -148.18, y: 64}
+  m_AnchoredPosition: {x: -148.18002, y: 64}
   m_SizeDelta: {x: -372.93, y: -197.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &874404387

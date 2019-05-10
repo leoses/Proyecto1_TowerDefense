@@ -597,40 +597,40 @@ MonoBehaviour:
     invocador: 0
     inhibidor: 0
     escudo: 2
-    tiempo: 40
+    tiempo: 20
     municion: 5
-  - melee: 3
-    distancia: 11
+  - melee: 15
+    distancia: 10
     teletransportador: 1
     invocador: 0
     inhibidor: 0
-    escudo: 1
+    escudo: 5
     tiempo: 30
     municion: 10
-  - melee: 2
-    distancia: 1
-    teletransportador: 1
-    invocador: 2
-    inhibidor: 0
-    escudo: 3
-    tiempo: 30
-    municion: 5
   - melee: 3
-    distancia: 1
-    teletransportador: 0
-    invocador: 0
-    inhibidor: 0
-    escudo: 7
-    tiempo: 50
-    municion: 5
+    distancia: 3
+    teletransportador: 3
+    invocador: 1
+    inhibidor: 2
+    escudo: 8
+    tiempo: 35
+    municion: 10
+  - melee: 4
+    distancia: 3
+    teletransportador: 2
+    invocador: 5
+    inhibidor: 3
+    escudo: 5
+    tiempo: 40
+    municion: 10
   - melee: 6
-    distancia: 0
-    teletransportador: 0
-    invocador: 0
-    inhibidor: 6
-    escudo: 0
-    tiempo: 30
-    municion: 5
+    distancia: 6
+    teletransportador: 2
+    invocador: 1
+    inhibidor: 10
+    escudo: 3
+    tiempo: 50
+    municion: 15
 --- !u!114 &97006074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1203,8 +1203,8 @@ RectTransform:
   - {fileID: 1123045712}
   - {fileID: 1991769414}
   - {fileID: 132033829}
-  - {fileID: 1815368136}
   - {fileID: 1383075613}
+  - {fileID: 1815368136}
   m_Father: {fileID: 508691897}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2599,7 +2599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 97, y: -32.300003}
+  m_AnchoredPosition: {x: 97, y: -32.299988}
   m_SizeDelta: {x: 75, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &759080993
@@ -12603,7 +12603,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 235433173}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14858,7 +14858,7 @@ RectTransform:
   m_Children:
   - {fileID: 758958177}
   m_Father: {fileID: 235433173}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
