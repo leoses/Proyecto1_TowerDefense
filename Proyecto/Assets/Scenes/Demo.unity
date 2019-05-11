@@ -591,12 +591,12 @@ MonoBehaviour:
   Inhibidor: {fileID: 1993969115435252, guid: 8fecf2fd146395946aa6c2a27ecba86d, type: 2}
   Escudo: {fileID: 1330129518568144, guid: 83373fb9bd0886a448911f86a41ed1ec, type: 2}
   oleada:
-  - melee: 15
-    distancia: 2
+  - melee: 0
+    distancia: 0
     teletransportador: 0
     invocador: 0
     inhibidor: 0
-    escudo: 2
+    escudo: 3
     tiempo: 20
     municion: 5
   - melee: 15
