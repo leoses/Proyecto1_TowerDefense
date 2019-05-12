@@ -136,4 +136,13 @@ public class UIManager : MonoBehaviour
         controls.gameObject.SetActive(false);
         ReturnPauseButton.gameObject.SetActive(false);
     }
+
+    public void ActiveInfo(GameObject objectInfo)
+    {
+        objectInfo.SetActive(true);
+    }
+    public void DesactivateInfo(GameObject objectInfo)
+    {
+        objectInfo.SetActive(false);
+    }
 }

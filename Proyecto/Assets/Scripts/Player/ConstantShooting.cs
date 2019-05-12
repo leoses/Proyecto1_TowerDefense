@@ -8,37 +8,39 @@ public class ConstantShooting : MonoBehaviour {
 
     //Disparo de la pistola
     public int damage;
-    public float cadencia = 1;
+    public float cadencia;
     public Bullet bala;
     private GameObject pool;
     private Animator animator;
-    private float n= 1;
+    private float time = 0;
+
     // Use this for initialization
     void Start ()
     {
-       
-        
         source = gameObject.GetComponentInParent<AudioSource>();
         pool = GameObject.FindGameObjectWithTag("bulletpool");
         animator = this.transform.parent.GetComponentInChildren<Animator>();
-        //InvokeRepeating("Shooting", 0, n);
-        
-
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //while(Input.GetMouseButtonDown(0) && )
-        if (Input.GetMouseButtonDown(0) && Time.timeScale > 0)
+        //Si el jugador clickea
+        if (Input.GetMouseButtonDown(0))
         {
-            n = cadencia;
-            InvokeRepeating("Shooting", 0, n);
+            Shooting();
+            time = 0;
         }
-        if (Input.GetMouseButtonUp(0))
+        //Si el jugador mantiene pulsado
+        else if (Input.GetButton("Fire1") && time<cadencia)
         {
-            CancelInvoke();
+            time += Time.deltaTime;
+            if (time > cadencia) Shooting();
+            
         }
+       else
+            time = 0;
+        
 	}
 
     void Shooting()
