@@ -208,15 +208,15 @@ RectTransform:
   m_GameObject: {fileID: 77030662}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90.17578}
-  m_LocalScale: {x: 0.00926, y: 0.00926, z: 0.00926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 967766824}
   m_Father: {fileID: 1012521343}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.8136373, y: -2.8363228}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -553.5}
   m_SizeDelta: {x: 350, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77030664
@@ -425,15 +425,15 @@ RectTransform:
   m_GameObject: {fileID: 195893616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90.17578}
-  m_LocalScale: {x: 0.00926, y: 0.00926, z: 0.00926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 883811767}
   m_Father: {fileID: 1012521343}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.8136373, y: -0.42758396}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -295.5}
   m_SizeDelta: {x: 350, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &195893618
@@ -609,8 +609,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 294.5, y: -742.8001}
-  m_SizeDelta: {x: 956.8, y: 244.5}
+  m_AnchoredPosition: {x: 294.5, y: -786.5}
+  m_SizeDelta: {x: 956.8, y: 331.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &210248624
 MonoBehaviour:
@@ -644,10 +644,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Enemigo relativamente com\xFAn cuya especialidad es el ataque a larga distancia.
-    Puede causar serios destrozos si  no acabas con ellos r\xE1pido, puesto que se
-    acostumbran a disparar cada vez m\xE1s r\xE1pido. Tienen dificultades a la hora
-    de superar obst\xE1culos en el camino como las barricadas"
+  m_Text: "Su nivel de vagueza le ha otorgado sus grandes caracter\xEDsticas. Por
+    ejemplo, solo usa balas reforzadas para poder atacar atravesando paredes y as\xED
+    no tener que desplazarse tanto. Aunque hay que decir que cuando se emociona, empieza
+    a disparar cada vez m\xE1s deprisa. Pero tambi\xE9n te da alguna ventaja, ya que
+    no te creas que va a gastar energ\xEDas para destruir tus barricadas o atacarte
+    a ti."
 --- !u!222 &210248625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -750,8 +752,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.45004, y: -717.80005}
-  m_SizeDelta: {x: 890.9, y: 128.50305}
+  m_AnchoredPosition: {x: 277.45004, y: -741}
+  m_SizeDelta: {x: 890.9, y: 174.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236587989
 MonoBehaviour:
@@ -827,15 +829,15 @@ RectTransform:
   m_GameObject: {fileID: 268807777}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90.17578}
-  m_LocalScale: {x: 0.00926, y: 0.00926, z: 0.00926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1245435297}
   m_Father: {fileID: 1012521343}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.8136373, y: -4.040692}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -166.5}
   m_SizeDelta: {x: 350, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268807779
@@ -1084,8 +1086,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.45004, y: -717.80005}
-  m_SizeDelta: {x: 890.9, y: 128.50305}
+  m_AnchoredPosition: {x: 277.45004, y: -762.3}
+  m_SizeDelta: {x: 890.9, y: 217.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &453350957
 MonoBehaviour:
@@ -1401,8 +1403,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.45004, y: -717.80005}
-  m_SizeDelta: {x: 890.9, y: 128.50305}
+  m_AnchoredPosition: {x: 277.45004, y: -720}
+  m_SizeDelta: {x: 890.9, y: 133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648611123
 MonoBehaviour:
@@ -1478,15 +1480,15 @@ RectTransform:
   m_GameObject: {fileID: 677093120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90.17578}
-  m_LocalScale: {x: 0.009264381, y: 0.009264381, z: 0.009264381}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1264478595}
   m_Father: {fileID: 1012521343}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.8136373, y: 1.981155}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -37.5}
   m_SizeDelta: {x: 350, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677093122
@@ -1916,10 +1918,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Enemigo com\xFAn y r\xE1pido cuyo ataque se basa en el da\xF1o que es capaz
-    de asestar con su cuchillo. No tiene mucho alcance, pero esto se ve compensado
-    con su velocidad y con la gran cantidad de ellos que aparecen dispuestos a acabar
-    con la vida del n\xFAcleo"
+  m_Text: "No es precisamente muy habilidoso, es m\xE1s bien bruto y va corriendo
+    sin pensar a todas partes, por lo que consideraron que el mejor arma que pod\xEDa
+    tener era un cuchillo (no se atrev\xEDan a darle otra cosa). A\xFAn as\xED tiene
+    muy claro su objetivo, y no dudar\xE1 en atacar a todo lo que intente imped\xEDrselo."
 --- !u!222 &966358536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2010,6 +2012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1012521343}
+  - component: {fileID: 1012521344}
   m_Layer: 0
   m_Name: EnemyButtons
   m_TagString: Untagged
@@ -2017,15 +2020,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1012521343
-Transform:
+--- !u!224 &1012521343
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1012521342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.466076, y: 66.15354, z: -9733.601}
-  m_LocalScale: {x: 107.9403, y: 107.9403, z: 107.9403}
+  m_LocalPosition: {x: 0, y: 0, z: -9733.601}
+  m_LocalScale: {x: 1, y: 1, z: 107.9403}
   m_Children:
   - {fileID: 677093121}
   - {fileID: 268807778}
@@ -2036,6 +2039,33 @@ Transform:
   m_Father: {fileID: 1855722667}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.051458344, y: 0.12074075}
+  m_AnchorMax: {x: 0.23400001, y: 0.7908149}
+  m_AnchoredPosition: {x: -51.5, y: 31.500008}
+  m_SizeDelta: {x: -103, y: -63}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1012521344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1012521342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 54
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
 --- !u!1 &1153620139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,8 +2174,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.45004, y: -717.80005}
-  m_SizeDelta: {x: 890.9, y: 128.50305}
+  m_AnchoredPosition: {x: 277.45004, y: -739.9}
+  m_SizeDelta: {x: 890.9, y: 172.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215036988
 MonoBehaviour:
@@ -2262,10 +2292,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Muerto en vida que al parecer tiene una obsesi\xF3n un tanto insana con
-    la gente vestida de azul. Al encontrarse a cualquiera con ropajes de dicho color,
-    comenzar\xE1 a perseguirle sin importar lo que se interponga en su camino. Si
-    te alcanza, prep\xE1rate para un viaje movidito."
+  m_Text: "Muerto en vida que al parecer tiene una obsesi\xF3n un tanto insana contigo,
+    no sabemos muy bien que le hiciste en vida, pero no debi\xF3 ser nada bueno. As\xED
+    que en cuanto te encuentre comenzar\xE1 a perseguirte sin importar lo que se interponga
+    en su camino. Si te alcanza, prep\xE1rate para un viaje movidito."
 --- !u!222 &1241604523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2525,8 +2555,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.45004, y: -717.80005}
-  m_SizeDelta: {x: 890.9, y: 128.50305}
+  m_AnchoredPosition: {x: 277.45004, y: -720}
+  m_SizeDelta: {x: 890.9, y: 133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1313732153
 MonoBehaviour:
@@ -2609,8 +2639,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 277.45004, y: -717.80005}
-  m_SizeDelta: {x: 890.9, y: 128.50305}
+  m_AnchoredPosition: {x: 277.45004, y: -720}
+  m_SizeDelta: {x: 890.9, y: 133}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1318690350
 MonoBehaviour:
@@ -3218,7 +3248,7 @@ Canvas:
   m_GameObject: {fileID: 1855722663}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 456378139}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3344,9 +3374,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Antiguo polic\xEDa que, junto con su inseparable escudo, ha sido capaz
-    de defender a las unidades enemigas de los ataques frontales. Sin embargo, es
-    incapaz de defenderse de los ataques por la espalda."
+  m_Text: "Antiguo polic\xEDa que, junto con su inseparable escudo a lo Capit\xE1n
+    Am\xE9rica, ha sido capaz de defender a las unidades enemigas de los ataques frontales.
+    Sin embargo, es incapaz de defenderse de los ataques por la espalda, ya que los
+    considera de cobardes."
 --- !u!222 &1866740160
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3380,15 +3411,15 @@ RectTransform:
   m_GameObject: {fileID: 1918622771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90.17578}
-  m_LocalScale: {x: 0.00926, y: 0.00926, z: 0.00926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1153620140}
   m_Father: {fileID: 1012521343}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.8136373, y: 0.77}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -682.5}
   m_SizeDelta: {x: 350, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1918622773
@@ -3699,15 +3730,15 @@ RectTransform:
   m_GameObject: {fileID: 2052331024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90.17578}
-  m_LocalScale: {x: 0.00926, y: 0.00926, z: 0.00926}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1455612608}
   m_Father: {fileID: 1012521343}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.8136373, y: -1.6319534}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -424.5}
   m_SizeDelta: {x: 350, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2052331026
