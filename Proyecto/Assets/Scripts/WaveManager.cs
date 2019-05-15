@@ -171,7 +171,7 @@ public class WaveManager : MonoBehaviour
     {
         totalEnemy -= n;
         //Debug.Log(totalEnemy);
-        if (totalEnemy <= 1)
+        if (totalEnemy <= 0)
         {
             GameManager.instance.EndGame(true);
         }
