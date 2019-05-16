@@ -86,8 +86,6 @@ public class BarricadePlacing : MonoBehaviour
 
                                 //FeedBack del texto al colocar las barricadas
                                 TextManager.instance.CreateText(new Vector3 (this.transform.position.x, this.transform.position.y + offset, this.transform.position.z), "-" + cost + "$");
-
-
                             }
                         }
                     }

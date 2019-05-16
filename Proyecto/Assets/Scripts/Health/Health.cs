@@ -120,4 +120,13 @@ public class Health : MonoBehaviour
     {
         barPlace = bar;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Muro") && gameObject.GetComponent<Ghost>() == null)
+        {
+            WaveManager.instance.LessEnemy(1);
+            Destroy(this.gameObject, 0.5f);
+        }
+    }
 }

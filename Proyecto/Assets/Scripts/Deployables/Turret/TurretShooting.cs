@@ -27,8 +27,6 @@ public class TurretShooting : MonoBehaviour {
         if (target != null) //Si existe objetivo encuentra el vector dirección
         {
             dir = new Vector2(target.position.x - transform.position.x, target.position.y - transform.position.y);
-            //float newang = Mathf.Rad2Deg * Mathf.Atan2(transform.position.x, transform.position.y);
-            //transform.rotation = Quaternion.Euler(0, 0, newang);
             if (target != null && Time.timeScale > 0 && dir.magnitude <= GameManager.turretRange + 0.5)
             //El +0.5 soluciona el problema que se plantea al usar el centro del objeto para calcular la magnitud del vector dirección
             //Cuando el método OverlapCircleAll colisiona con cualquier parte del box collider (a cierta distancia no coinciden)

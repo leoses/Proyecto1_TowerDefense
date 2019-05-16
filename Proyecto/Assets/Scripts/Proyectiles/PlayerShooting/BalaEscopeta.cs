@@ -23,7 +23,7 @@ public class BalaEscopeta : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Health enemigo = collision.gameObject.GetComponent<Health>();
-        Shield shield = collision.gameObject.GetComponent<Shield>();
+        //Shield shield = collision.gameObject.GetComponent<Shield>();
 
         //Si el gameObject con el que "colisionan" tiene salud, le causa daño a no ser que sea o el Escudo o el nexo
         if (enemigo != null)

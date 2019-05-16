@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour
     // actualiza y muestra la informacion de las oleadas
     public void Oleada(int wave, int time, int totalWaves, int actTime)
     {
-        timeText.text = actTime + "/" + time;
+        timeText.text = "" + (time - actTime);
         waveText.text = wave + "/" + totalWaves;
     }
 
